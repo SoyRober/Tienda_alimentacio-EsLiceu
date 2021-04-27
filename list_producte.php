@@ -7,24 +7,33 @@
             <h6> Carabirubi, carabiruba </h6>
             <p> Parrafito guapito del bonico </p>
             <table>
-                <tr>
-                    <td> idProducte </td>
-                    <td> Codi_de_barres </td>
-                    <td> Nom </td>
-                    <td> IVA </td>
-                    <td> Descripcio </td>
-                    <td> Preu </td>
-                    <td> fkcifProveidor </td>
-                </tr>
-                <tr>
-                    <td> 1 </td>
-                    <td> CJ374850127386 </td>
-                    <td> Pan </td>
-                    <td> 14 </td>
-                    <td> Molt bo, de casa </td>
-                    <td> 0.99 </td>
-                    <td> 54875621B </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th> idProducte </th>
+                        <th> Codi_de_barres </th>
+                        <th> Nom </th>
+                        <th> IVA </th>
+                        <th> Descripció </th>
+                        <th> Preu </th>
+                        <th> fkcifProveidor </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    $query = "Select * FROM Producte ORDER BY Nom";
+                    $result = mysqli_query ($bbdd, $query);
+                    while ($Producte = mysqli_fetch_assoc ($result))
+                        echo    "<tr>
+                                    <td> idProducte </td>
+                                    <td> Codi_de_barres </td>
+                                    <td> Nom </td>
+                                    <td> IVA </td>
+                                    <td> Descripcio </td>
+                                    <td> Preu </td>
+                                    <td> fkcifProveidor </td>
+                                </tr>"
+                    ?>
+                </tbody>        
             </table>
         </body>
     </html> 
