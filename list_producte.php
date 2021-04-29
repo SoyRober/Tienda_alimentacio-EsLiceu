@@ -9,7 +9,6 @@
             <table>
                 <thead>
                     <tr>
-                        <th> idProducte </th>
                         <th> Codi_de_barres </th>
                         <th> Nom </th>
                         <th> IVA </th>
@@ -24,7 +23,6 @@
                     $result = mysqli_query ($bbdd, $query);
                     while ($Producte = mysqli_fetch_assoc ($result))
                         echo    "<tr>
-                                    <td> idProducte </td>
                                     <td> Codi_de_barres </td>
                                     <td> Nom </td>
                                     <td> IVA </td>

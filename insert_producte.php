@@ -29,7 +29,7 @@
                 <label>
                     Preu  
                 </label>   
-                <input type="number" max="100" required min="0,99" name="Preu">
+                <input type="number" max="100" required min="0,00" name="Preu" step="0.01">
             </div>
             <div>    
                 <label>
