@@ -3,8 +3,8 @@
 <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php";?>
-        <h2> Index Roberto</h2>
-        <h9> Carabirubi, carabiruba </h9>
-        <p> Parrafito guapito </p>
+        <h2> Index Javier Paniza</h2>
+        <h9> Precioso </h9>
+        <p> Parrafito todo muy precioso </p>
     </body>
 </html>
