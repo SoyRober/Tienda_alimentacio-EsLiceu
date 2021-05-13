@@ -6,7 +6,7 @@
         <h2> Insertar producte </h2>
         <h9> Carabirubi, carabiruba </h9>
         <p> Parrafito guapito del bonico </p>
-        <form action="insert_api_producte.php" method="post">
+        <form action="insert_api_proveidor.php" method="post">
             <div>
                 <label>
                     Nom   
@@ -15,31 +15,34 @@
             </div>
             <div>    
                 <label>
-                     
+                     Telèfon
                 </label>
-                <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres">
+                <input type="text" maxlength="11" required minlength="11" name="Telefon">
             </div>
             <div>    
                 <label>
-                    IVA  
+                    Població  
                 </label>   
-                <input type="number" max="21" required min="14" name="IVA">
+                <input type="number" max="99999999" required name="Poblacio">
             </div>
             <div>    
                 <label>
-                    Preu  
+                    CP  
                 </label>   
-                <input type="number" max="100" required min="0,00" name="Preu" step="0.01">
+                <input type="text" max="6" required name="CP">
             </div>
             <div>    
                 <label>
-                    Descripcio
+                    Pais
                 </label>   
-                <input type="text" max="150" required min="5" name="Descripcio">
+                <input type="text" max="150" required min="5" name="Pais">
             </div>
             <div>
+                <label>
+                    cifProveidor
+                </label>    
                 <select name="cifProveidor" required>
-                <option value=""></option>
+                <option value=""> </option>
                     <?php
                         $query = "SELECT cifProveidor, Nom FROM Proveidor;";
                         $result = mysqli_query ($bbdd, $query) OR DIE ("Alguna cosa no va correctament"); 

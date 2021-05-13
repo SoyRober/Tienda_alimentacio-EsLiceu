@@ -36,7 +36,7 @@
                 <tbody>
                     <?php 
                     $where = "";
-                    if (isset($_GET[Proveidor])) {
+                    if (isset($_GET["Proveidor"])) {
                         $where " WHERE pd.cifProveidor = $_GET[Proveidor] ";
                     }
                     $query = "Select pr.*, pd.Nom AS NomProveidor 
