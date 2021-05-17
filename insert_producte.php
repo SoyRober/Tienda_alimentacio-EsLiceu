@@ -38,8 +38,11 @@
                 <input type="text" max="150" required min="5" name="Descripcio">
             </div>
             <div>
+            <label>
+                Proveidor
+            </label>
                 <select name="cifProveidor" required>
-                <option value=""></option>
+                <option value="">  </option>
                     <?php
                         $query = "SELECT cifProveidor, Nom FROM Proveidor;";
                         $result = mysqli_query ($bbdd, $query) OR DIE ("Alguna cosa no va correctament"); 
