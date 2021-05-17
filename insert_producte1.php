@@ -3,39 +3,33 @@
     <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php";?>
-        <h2> Insertar producte </h2>
-        <h9> Carabirubi, carabiruba </h9>
-        <p> Parrafito guapito del bonico </p>
+        <h2> Insertar venta </h2>
+        <h9> Carita , cara </h9>
+        <p> Parrafo con tremenda personalidad </p>
         <form action="insert_api_producte.php" method="post">
             <div>
                 <label>
-                    Nom   
+                    Nom
                 </label>
                 <input type="text" maxlength="255" required minlength="2" name="Nom">
             </div>
             <div>    
                 <label>
-                    Codi_de_barres    
+                    idTargeta    
                 </label>
                 <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres">
             </div>
             <div>    
                 <label>
-                    IVA  
+                    Descompte  
                 </label>   
-                <input type="number" max="21" required min="14" name="IVA">
+                <input type="number" max="100" required min="1" name="Descompte">
             </div>
             <div>    
                 <label>
-                    Preu  
+                    Punts  
                 </label>   
-                <input type="number" max="100" required min="0,99" name="Preu">
-            </div>
-            <div>    
-                <label>
-                    Descripcio
-                </label>   
-                <input type="text" max="150" required min="5" name="Descripcio">
+                <input type="number" max="100" required min="0,99" name="Punts">
             </div>
             <div>
                 <select name="cifProveidor" required>

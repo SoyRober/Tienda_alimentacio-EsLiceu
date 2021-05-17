@@ -4,8 +4,8 @@
     ?>
         <body>
         <?php 
-        if(isset($_GET[proveidor]))
-        $where ="WHERE pd.ID= $_GET[proveidor]";
+        if(isset($_GET['Proveidor']))
+        $where ="WHERE pd.ID= $_GET[Proveidor]";
         
         $query="SELECT pr.*,pd.Nom AS NomProveidor
         FROM Producte AS pr INNER JOIN 
@@ -18,7 +18,7 @@
             <h6> Carabirubi, carabiruba </h6>
             <p> Parrafito guapito del bonico </p>
             <FORM action="list_producte.php" method="GET">
-            <SELECT NAME="proveidor">
+            <SELECT NAME="Proveidor">
             <?php
             $query="SELECT Nom,ID FROM Proveidor
                 order by Nom";
@@ -56,5 +56,5 @@
     </html> 
 
 
-    ?>
+    
 
