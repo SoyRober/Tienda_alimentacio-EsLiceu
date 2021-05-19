@@ -12,7 +12,7 @@
                         $query = "SELECT Nom, cifProveidor FROM Proveidor ORDER BY Nom;";
                         $result = mysqli_query ($bbdd, $query);
                             while ($row = mysqli_fetch_assoc ($result)) {
-                                echo "<option value = \"$row[cifProveidor]> $row[Nom] </option>";
+                                echo "<option value = \"$row[cifProveidor]\"> $row[Nom] </option>";
                             }
                     ?>
                     <button type = "submit"> Filtrar </button>

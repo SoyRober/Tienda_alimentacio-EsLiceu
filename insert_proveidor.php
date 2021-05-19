@@ -29,19 +29,19 @@
                 <label>
                     CP  
                 </label>   
-                <input type="text" max="6" required name="CP">
+                <input type="text" maxlenght="6" required name="CP">
             </div>
             <div>    
                 <label>
                     Pais
                 </label>   
-                <input type="text" max="150" required min="5" name="Pais">
+                <input type="text" maxlenght="150" required minlenght="5" name="Pais">
             </div>
             <div>    
                 <label>
-                    Pais
+                    Adreça
                 </label>   
-                <input type="text" max="150" required min="5" name="Pais">
+                <input type="text" maxlenght="150" required minlenght="5" name="Adreca">
             </div>
             <div>
                 <label>

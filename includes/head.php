@@ -1,4 +1,3 @@
-<?php require "includes/mysql.php";?>
 <head>
     <title> Títol de la WEB </title>
         <meta charset="UTF-8">
@@ -6,3 +5,4 @@
         <meta name="description" content="Descripció de la WEB">
         <link href="styles/style.css" rel="stylesheet">
 </head>
+<?php require "includes/mysql.php";?>

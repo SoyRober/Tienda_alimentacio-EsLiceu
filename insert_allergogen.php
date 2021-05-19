@@ -12,10 +12,6 @@
                     Nom   
                 </label>
                 <input type="text" maxlength="255" required minlength="2" name="Nom">
-            </div>
-                <label>
-                    idAllergogen
-                </label>
             <div>
                 <label>
                     Resetear

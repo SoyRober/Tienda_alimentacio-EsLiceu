@@ -15,7 +15,7 @@
             </div>
             <div>    
                 <label>
-                    Codi_de_barres    
+                    Codi de barres    
                 </label>
                 <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres">
             </div>
@@ -33,13 +33,13 @@
             </div>
             <div>    
                 <label>
-                    Descripcio
+                    Descripció
                 </label>   
                 <input type="text" max="150" required min="5" name="Descripcio">
             </div>
             <div>
             <label>
-                Proveidor
+                Proveïdor
             </label>
                 <select name="cifProveidor" required>
                 <option value="">  </option>

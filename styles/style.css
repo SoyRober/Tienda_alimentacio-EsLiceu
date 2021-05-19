@@ -1,9 +1,9 @@
-td{
-    color:#000;
-    border:2px solid #A00;
+tr{
+    color:rgb(255, 250, 250);
+    border:2px solid rgb(0, 140, 255);
     padding:5px 2px 5px 1px;
     margin:5px;
-    background-color:#31FCAC;}
+    background-color:#be3c3c;}
 a{
     color:rgb(0, 100, 150);
     padding:5px 5px 5px 5px;

@@ -17,10 +17,15 @@
                 </thead>
                 <tbody>
                     <?php 
-                    $query = "Select Nom FROM Allergogen ORDER BY Nom;";
+                    $where = "";
+                    if (isset($_GET["Allergogen"])) {
+                        $where = " WHERE pd.idAllergogen = $_GET[Allergogen] ";
+                    }
+                    $query = "Select Nom, Allergogen FROM Allergogen $where ORDER BY pr.Nom;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
+                                    <td> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
                                 </tr>"
                     ?>
