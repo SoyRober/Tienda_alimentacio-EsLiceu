@@ -17,10 +17,11 @@
                 </thead>
                 <tbody>
                     <?php 
-                    $query = "Select Nom FROM Allergogen ORDER BY Nom;";
+                    $query = "Select * FROM Allergogen ORDER BY Nom;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
+                                    <td> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
                                 </tr>"
                     ?>
