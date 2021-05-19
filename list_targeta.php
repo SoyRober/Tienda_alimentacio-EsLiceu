@@ -14,9 +14,9 @@
         ORDER BY pr.Nom ";
         
         require "includes/header.php";?>
-            <h2> Listar producte </h2>
-            <h6> Carabirubi, carabiruba </h6>
-            <p> Parrafito guapito del bonico </p>
+            <h2> Listar  vendes</h2>
+            <h6> rubías , cara de sandía </h6>
+            <p> Parrafo precioso la verdad </p>
             <FORM action="list_producte.php" method="GET">
             <SELECT NAME="Proveidor">
             <?php
@@ -34,22 +34,17 @@
                 </form>
             <table>
                 <tr>
-                    <td> idProducte </td>
-                    <td> Codi_de_barres </td>
+                    <td> idTargeta </td>
+                    <td> Punts </td>
+                    <td> Descompte</td>
                     <td> Nom </td>
-                    <td> IVA </td>
-                    <td> Descripcio </td>
-                    <td> Preu </td>
-                    <td> fkcifProveidor </td>
-                </tr>
+                </tr>   
                 <tr>
-                    <td> 1 </td>
-                    <td> CJ374850127386 </td>
-                    <td> Pan </td>
-                    <td> 14 </td>
-                    <td> Molt bo, de casa </td>
-                    <td> 0.99 </td>
-                    <td> 54875621B </td>
+                    <td> 191928301S </td>
+                    <td> 90 </td>
+                    <td> 10 </td>
+                    <td> Rober </td>
+                    
                 </tr>
             </table>
         </body>
