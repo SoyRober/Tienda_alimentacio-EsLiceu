@@ -2,11 +2,12 @@
     <html lang="ca">
     <?php require "includes/head.php";?>
         <body>
-        <?php require "includes/header.php";?>
-            <h2> Listar producte </h2>
-            <h6> Carabirubi, carabiruba </h6>
-            <p> Parrafito guapito del bonico </p>
+            <h2> Llista de productes </h2>
+            <?php require "includes/header.php";?>
             <form action = "list_producte.php" method = "GET" >
+
+<!-- Tengo que preguntar a Tomeu -->
+
                 <select name="Proveidor">
                 <option value="">  </option>
                     <?php

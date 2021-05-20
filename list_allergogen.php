@@ -2,8 +2,8 @@
     <html lang="ca">
     <?php require "includes/head.php";?>
         <body>
-        <?php require "includes/header.php";?>
-            <h2> Listar proveidor </h2>
+            <h2> Llista d'al·lergògens </h2>
+            <?php require "includes/header.php";?>
             <h6> Carabirubi, carabiruba </h6>
             <p> Parrafito guapito del bonico </p>
             <form action = "list_allergogen.php" method = "GET" >
@@ -24,6 +24,7 @@
                         echo    "<tr>
                                     <td> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
+                                    <td> <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> </td>
                                 </tr>"
                     ?>
                 </tbody>        

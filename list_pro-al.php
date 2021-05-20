@@ -3,7 +3,7 @@
     <?php require "includes/head.php";?>
         <body>
         <?php require "includes/header.php";?>
-            <h2> Listar proveidor </h2>
+            <h2> Llista de productes amb al·lergògens </h2>
             <h6> Carabirubi, carabiruba </h6>
             <p> Parrafito guapito del bonico </p>
             <form action = "list_pro-al.php" method = "GET" >
@@ -11,13 +11,16 @@
             <table>
                 <thead>
                     <tr>
+                        <th> idProducte </th>
                         <th> idAllergogen </th>
-                        <th> Nom </th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                    $query = "Select * FROM Allergogen ORDEr BY idProducte;";
+                    $query = "SELECT al.* FROM Allergogen AS al INNER JOIN Pro_Al AS pral ON (al.ID=pral.fkidAllergogen) 
+                    WHERE pral.fkidAllergogen = $_GET[idAllergogen];";
+                    $query = "SELECT pr.* FROM Producte AS pr INNER JOIN Pro_Al AS pral ON (pr.ID=pral.fkidProducte) 
+                    WHERE pral.fkidProducte = $_GET[idProducte];";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>

@@ -2,8 +2,8 @@
     <html lang="ca">
     <?php require "includes/head.php";?>
         <body>
-        <?php require "includes/header.php";?>
-            <h2> Listar proveidor </h2>
+            <h2> Llista de proveidors </h2>
+            <?php require "includes/header.php";?>
             <h6> Carabirubi, carabiruba </h6>
             <p> Parrafito guapito del bonico </p>
             <form action = "list_proveidor.php" method = "GET" >
