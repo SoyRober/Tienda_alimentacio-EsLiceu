@@ -13,11 +13,12 @@
                     <tr>
                         <th> idAllergogen </th>
                         <th> Nom </th>
+                        <th> Opcions </th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php 
-                    $query = "Select * FROM Allergogen ORDER BY Nom;";
+                    $query = "Select * FROM Allergogen ORDER BY idAllergogen;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>

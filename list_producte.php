@@ -8,6 +8,7 @@
             <p> Parrafito guapito del bonico </p>
             <form action = "list_producte.php" method = "GET" >
                 <select name="Proveidor">
+                <option value="">  </option>
                     <?php
                         $query = "SELECT Nom, cifProveidor FROM Proveidor ORDER BY Nom;";
                         $result = mysqli_query ($bbdd, $query);
@@ -15,19 +16,20 @@
                                 echo "<option value = \"$row[cifProveidor]\"> $row[Nom] </option>";
                             }
                     ?>
-                    <button type = "submit"> Filtrar </button>
                 </select>
                 <button type = "submit"> Filtrar </button>
             </form>
             <table>
                 <thead>
                     <tr>
-                        <th> Codi_de_barres </th>
+                        <th> idProducte </th>
+                        <th> Codi de barres </th>
                         <th> Nom </th>
                         <th> IVA </th>
                         <th> Descripció </th>
                         <th> Preu </th>
-                        <th> fkcifProveidor </th>
+                        <th> cifProveidor </th>
+                        <th> Opcions </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,16 +41,18 @@
                     $query = "Select pr.*, pd.Nom AS NomProveidor 
                         FROM Producte AS pr INNER JOIN Proveidor AS pd
                         ON (pr.fkcifProveidor = pd.cifProveidor)
-                        $where ORDER BY pr.Nom;";
+                        $where ORDER BY idProducte";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
-                        echo    "<tr>
+                        echo    "<tr> 
+                                    <td> $row[idProducte] 
                                     <td> $row[Codi_de_barres] </td>
                                     <td> $row[Nom] </td>
                                     <td> $row[IVA] </td>
                                     <td> $row[Descripcio] </td>
                                     <td> $row[Preu] </td>
                                     <td> $row[fkcifProveidor] </td>
+                                    <td> <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> </td>
                                 </tr>"
                     ?>
                 </tbody>        

@@ -17,7 +17,7 @@
                 <label>
                      Telèfon
                 </label>
-                <input type="text" maxlength="13" required minlength="11" name="Telefon">
+                <input type="text" maxlength="16" required minlength="16" name="Telefon">
             </div>
             <div>    
                 <label>

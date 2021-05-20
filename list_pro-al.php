@@ -17,12 +17,12 @@
                 </thead>
                 <tbody>
                     <?php 
-                    $query = "Select * FROM Allergogen ORDER BY Nom;";
+                    $query = "Select * FROM Allergogen ORDEr BY idProducte;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
+                                    <td> $row[idProducte] </td>
                                     <td> $row[idAllergogen] </td>
-                                    <td> $row[Nom] </td>
                                 </tr>"
                     ?>
                 </tbody>        

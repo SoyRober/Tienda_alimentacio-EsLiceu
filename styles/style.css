@@ -1,11 +1,14 @@
 tr{
     color:rgb(255, 250, 250);
-    border:2px solid rgb(0, 140, 255);
     padding:5px 2px 5px 1px;
     margin:5px;
-    background-color:#be3c3c;}
-a{
-    color:rgb(0, 100, 150);
-    padding:5px 5px 5px 5px;
-    text-decoration:"none";
+    background-color:#3b5998;
+}
+
+header a{
+    color: pink;
+}
+
+table a{
+    color: green;
 }

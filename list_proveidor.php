@@ -8,17 +8,30 @@
             <p> Parrafito guapito del bonico </p>
             <form action = "list_proveidor.php" method = "GET" >
                 <select name="Proveidor">
+                <option value="">  </option>
                     <?php
-                        $query = "SELECT Nom, cifProveidor FROM Proveidor ORDER BY Nom;";
+                        $query = "SELECT cifProveidor, Pais FROM Proveidor ORDER BY Nom;";
                         $result = mysqli_query($bbdd, $query);
                             while ($row = mysqli_fetch_assoc ($result)) {
-                                echo "<option value = \"$row[cifProveidor]\"> $row[cifProveidor] </option>";
+                                echo "<option value = \"$row[cifProveidor]\"> $row[Pais] </option>";
                             }
                     ?>
                 </select>
                 <button type = "submit"> Filtrar </button>
             </form>
             <table>
+                <thead>
+                    <tr>
+                        <th> Població </th>
+                        <th> Nom </th>
+                        <th> Adreca </th>
+                        <th> CP </th>
+                        <th> País </th>
+                        <th> cifProveidor </th>
+                        <th> Telèfon </th>
+                        <th> Opcions </th>
+                    </tr>
+                </thead>
                 <tbody>
                     <?php 
                     $where = "";
@@ -36,6 +49,7 @@
                                     <td> $row[Pais] </td>
                                     <td> $row[cifProveidor] </td>
                                     <td> $row[Telefon] </td>
+                                    <td> <a href=\"delete_api_proveidor.php?cifProveidor=$row[cifProveidor]\"> Elimina </a> </td>
                                 </tr>";
                     }
                     ?>
