@@ -9,6 +9,7 @@
             <form action = "list_proveidor.php" method = "GET" >
                 <select name="Proveidor">
                 <option value="">  </option>
+                <!-- Preguntar a Tomeu -->
                     <?php
                         $query = "SELECT cifProveidor, Pais FROM Proveidor ORDER BY Nom;";
                         $result = mysqli_query($bbdd, $query);

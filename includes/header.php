@@ -1,11 +1,15 @@
 <header>
     <nav id="menu">
         <ul>
+            <li> <a href="index.php"> Index </a> </li>
+        </ul>
+    </nav>
+    <nav id="menu">
+        <ul>
             <li> <a href="#"> Producte </a>
         <ul>
-            <li> <a href="insertar_producte.php"> Insertar nou producte </a> </li>
+            <li> <a href="insert_producte.php"> Insertar nou producte </a> </li>
             <li> <a href="list_producte.php"> Llista dels productes </a> </li>
-            <li> <a href="list_pro-al.php"> Llista de productes sense al·lergògens </a> </li>
         </ul>
     </nav>
     <nav id="menu">

@@ -53,7 +53,10 @@
                                     <td> $row[Descripcio] </td>
                                     <td> $row[Preu] </td>
                                     <td> $row[fkcifProveidor] </td>
-                                    <td> <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> </td>
+                                    <td> 
+                                    <a href=\"list_pro-al.php?idProducte=$row[idProducte]\"> Consulta alergogens </a> 
+                                    <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> 
+                                    </td>
                                 </tr>"
                     ?>
                 </tbody>        

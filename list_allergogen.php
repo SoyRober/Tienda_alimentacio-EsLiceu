@@ -22,7 +22,7 @@
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
-                                    <td> $row[idAllergogen] </td>
+                                    <td align=\"center\"> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
                                     <td> <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> </td>
                                 </tr>"
