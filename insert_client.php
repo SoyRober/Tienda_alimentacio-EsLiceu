@@ -6,7 +6,7 @@
         <h2> Insertar client </h2>
         <h9> Carita , cara </h9>
         <p> Parrafo con tremenda personalidad </p>
-        <form action="insert_api_producte.php" method="post">
+        <form action="insert_api_client.php" method="post">
             <div>
                 <label>
                     Nom
@@ -14,40 +14,37 @@
                 <input type="text" maxlength="255" required minlength="2" name="Nom">
             </div>
             <div>    
-                <label>
-                    dniClient    
-                </label>
-                <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres">
-            </div>
             <div>    
                 <label>
                     Pais   
                 </label>   
-                <input type="number" max="40" required min="20" name="Descompte">
+                <input type="text" max="40" required min="20" name="Descompte">
             </div>
             <div>    
                 <label>
                   CP    
                 </label>   
-                <input type="number" max="100" required min="0,99" name="Punts">
+                <input type="text" max="100" required min="0,99" name="Punts">
             </div>
             <div>
             <label>
                     Telefon   
                 </label>   
-                <input type="number" max="40" required min="20" name="Descompte">
+                <input type="number" max="255" required min="20" name="Descompte">
             </div>
             <div>
             <label>
                     Pais   
                 </label>   
-                <input type="number" max="40" required min="20" name="Descompte">
+                <input type="text" max="40" required min="20" name="Descompte">
             
-            <div>
+            </div>
+            
+            
                 <select name="cifProveidor" required>
                 <option value=""></option>
                     <?php
-                        $query = "SELECT cifProveidor, Nom FROM Proveidor;";
+                        $query = "SELECT cifProveidor, Nom FROM Client;";
                         $result = mysqli_query ($bbdd, $query) OR DIE ("Alguna cosa no va correctament"); 
                         while ($Proveidor = mysqli_fetch_assoc ($result)) {
                             echo "<option value = \"$Proveidor[cifProveidor]\">$Proveidor[Nom]</option>";

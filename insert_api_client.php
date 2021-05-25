@@ -3,13 +3,15 @@
     require "includes/header.php";
     require "includes/mysql.php";
     echo "<p> Nom:".$_POST["Nom"]."</p>"; 
-    echo "<p> Codi_de_barrres:".$_POST["Codi_de_barres"]."</p>"; 
-    echo "<p> IVA:".$_POST["IVA"]."</p>";
-    echo "<p> Descripcio:".$_POST["Descripcio"]."</p>";  
-    echo "<p> Preu:".$_POST["Preu"]."</p>";
-    echo "<p> cifProveidor:".$_POST["cifProveidor"]."</p>";
-    $query="INSERT INTO Producte (Nom,Codi_de_barres,IVA,Descripcio,Preu,cifProveidor) 
-    VALUES (\"$_POST[Nom]\", \"$_POST[Codi_de_barres]\", \"$_POST[IVA]\", \"$_POST[Descripcio]\", \"$_POST[Descripcio]\", \"$_POST[Descripcio]\");";
+    echo "<p> dniClient:".$_POST["dniClient"]."</p>"; 
+    echo "<p> Pais:".$_POST["Pais"]."</p>";
+    echo "<p> CP:".$_POST["CP"]."</p>";  
+    echo "<p> Telefon:".$_POST["Telefon"]."</p>";
+    echo "<p> Provincia:".$_POST["Provincia"]."</p>";
+    echo "<p> Poblacio:".$_POST["Poblacio"]."</p>";
+    echo "<p> Adreca:".$_POST["Adreca"]."</p>";    
+    $query="INSERT INTO Client (Nom,dniClient,Pais,CP,Telefon,Provincia,Poblacio,Adreca) 
+    VALUES (\"$_POST[Nom]\", \"$_POST[dniClient]\", \"$_POST[Pais]\", \"$_POST[CP]\", \"$_POST[Telefon]\", \"$_POST[Provincia]\",\"$_POST[Telefon]\",\"$_POST[Adreca]\");";    
     echo $query;
     $result = mysqli_query($bbdd, $query);
     if(!$result){

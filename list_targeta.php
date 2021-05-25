@@ -3,29 +3,20 @@
     <?php require "includes/head.php";
     ?>
         <body>
-        <?php 
-        if(isset($_GET['Proveidor']))
-        $where ="WHERE pd.ID= $_GET[Proveidor]";
-        
-        $query="SELECT pr.*,pd.Nom AS NomProveidor
-        FROM Producte AS pr INNER JOIN 
-        Proveidor AS pd ON (pr.Fk_prov=pd.ID)
-        $where
-        ORDER BY pr.Nom ";
-        
-        require "includes/header.php";?>
-            <h2> Listar  vendes</h2>
+    
+            <h2> Listar  targeta</h2>
             <h6> rubías , cara de sandía </h6>
             <p> Parrafo precioso la verdad </p>
-            <FORM action="list_producte.php" method="GET">
-            <SELECT NAME="Proveidor">
+            <FORM action="list_targeta.php" method="GET">
+            <SELECT NAME="Targeta">
             <?php
-            $query="SELECT Nom,ID FROM Proveidor
-                order by Nom";
+            require "includes/header.php";
+            $query="SELECT * FROM Targeta
+                           order by Nom";
             $result= mysqli_query($bbdd,$query);
             while ($row = mysqli_fetch_assoc($result))
 
-                echo "<option value=\"($row[ID]\">
+                echo "<option value=\"($row[id]\">
                     $row[nom]</option>"
                 ?>
                 </select>
