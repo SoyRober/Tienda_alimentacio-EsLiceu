@@ -19,17 +19,19 @@
                 </label>
                 <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres">
             </div>
-            <div>    
+            <div>
                 <label>
-                    IVA  
-                </label>   
-                <input type="number" max="21" required min="14" name="IVA">
+                    IVA   
+                </label>    
+                <input type="radio" name="IVA" value="4"> 4
+                <input type="radio" name="IVA" value="10"> 10 
+                <input type="radio" name="IVA" value="21"> 21 
             </div>
             <div>    
                 <label>
                     Preu  
                 </label>   
-                <input type="number" max="100" required min="0,00" name="Preu" step="0.01">
+                <input type="number" required min="0,01" name="Preu" step="0.01">
             </div>
             <div>    
                 <label>

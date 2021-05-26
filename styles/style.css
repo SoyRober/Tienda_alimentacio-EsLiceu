@@ -1,17 +1,21 @@
 tr{
     color:white;
-    padding:5px 2px 5px 1px;
-    margin:5px;
     background-color:#008f39;
-    }
+}
+
+body{
+    background-image: url("../img/fondo.jpg");
+}
+
 
 table a{
     color:#fff;
     text-decoration: none;
 }
 
-h2 {
-    padding-top: 20px;
+select {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 body h1 {
@@ -25,21 +29,18 @@ body h1 {
 }
 
 header {
+    
     display: inline-block;
-    width: 100%;
+    width: 97%;
 }
 
-tr {
-    text-align:center;
+table {
+    margin: 0 auto;
 }
 
-
-
-
-
-
-
-
+thead th{
+    background-color: #008f39;
+}
 
 #menu ul {
     list-style:none;
@@ -99,4 +100,29 @@ tr {
 
 html {
     font-family: arial;
+}
+ 
+h1.img span{
+    position: relative;
+}
+
+h1.img span::before{
+    content: " ";
+    width: 90px;
+    height: 90px;
+    background-image: url('../img/cesta_comida.png');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: -103px;
+    top: -26px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 40%;
 }

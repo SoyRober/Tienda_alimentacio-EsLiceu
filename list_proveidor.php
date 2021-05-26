@@ -2,19 +2,16 @@
     <html lang="ca">
     <?php require "includes/head.php";?>
         <body>
-            <h2> Llista de proveidors </h2>
             <?php require "includes/header.php";?>
-            <h6> Carabirubi, carabiruba </h6>
-            <p> Parrafito guapito del bonico </p>
+            <h2> Llista de tots els proveidors </h2>
             <form action = "list_proveidor.php" method = "GET" >
-                <select name="Proveidor">
-                <option value="">  </option>
-                <!-- Preguntar a Tomeu -->
+                <select name="Pais">
+                    <option value="">  </option>
                     <?php
-                        $query = "SELECT cifProveidor, Pais FROM Proveidor ORDER BY Nom;";
+                        $query = "SELECT  DISTINCT Pais FROM Proveidor ORDER BY Nom;";
                         $result = mysqli_query($bbdd, $query);
                             while ($row = mysqli_fetch_assoc ($result)) {
-                                echo "<option value = \"$row[cifProveidor]\"> $row[Pais] </option>";
+                                echo "<option value = \"$row[Pais]\"> $row[Pais] </option>";
                             }
                     ?>
                 </select>
@@ -36,8 +33,8 @@
                 <tbody>
                     <?php 
                     $where = "";
-                    if (isset($_GET['Proveidor'])) {
-                        $where = " WHERE cifProveidor = \"$_GET[Proveidor]\" ";
+                    if (isset($_GET['Pais'])) {
+                        $where = " WHERE Pais = \"$_GET[Pais]\" ";
                     }
                     $query = "SELECT * FROM Proveidor $where ORDER BY Nom;";
                     $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));

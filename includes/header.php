@@ -1,7 +1,8 @@
 <header>
+    <h1 class="img"> <span>Constas</span> </h1>
     <nav id="menu">
         <ul>
-            <li> <a href="index.php"> Index </a> </li>
+            <li> <a href="index.php"> Home </a> </li>
         </ul>
     </nav>
     <nav id="menu">

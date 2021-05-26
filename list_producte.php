@@ -2,12 +2,9 @@
     <html lang="ca">
     <?php require "includes/head.php";?>
         <body>
-            <h2> Llista de productes </h2>
             <?php require "includes/header.php";?>
+            <h2> Llista de tots els productes </h2>
             <form action = "list_producte.php" method = "GET" >
-
-<!-- Tengo que preguntar a Tomeu -->
-
                 <select name="Proveidor">
                 <option value="">  </option>
                     <?php
@@ -54,7 +51,7 @@
                                     <td> $row[Preu] </td>
                                     <td> $row[fkcifProveidor] </td>
                                     <td> 
-                                    <a href=\"list_pro-al.php?idProducte=$row[idProducte]\"> Consulta alergogens </a> 
+                                    <a href=\"list_pro-al.php?idProducte=$row[idProducte]\"> Consulta alergogens </a> | 
                                     <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> 
                                     </td>
                                 </tr>"
