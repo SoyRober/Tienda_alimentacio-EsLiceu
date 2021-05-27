@@ -52,7 +52,8 @@
                                     <td> $row[fkcifProveidor] </td>
                                     <td> 
                                     <a href=\"list_pro-al.php?idProducte=$row[idProducte]\"> Consulta alergogens </a> | 
-                                    <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> 
+                                    <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> |
+                                    <a href=\"insert_producte.php?idProducte=$row[idProducte]\"> Editar </a>
                                     </td>
                                 </tr>"
                     ?>
