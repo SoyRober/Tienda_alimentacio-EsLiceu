@@ -7,4 +7,5 @@
     <img src="img/mercadona_pasillo_1.jpg" width="500" height="500">
     <img src="img/mercadona_pasillo_2.jpg" width="500" height="500">
     <img src="img/mercadona_pasillo_3.jpg" width="500" height="500">
+    <?php require "includes/footer.php";?>
 </html>

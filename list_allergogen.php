@@ -22,7 +22,10 @@
                         echo    "<tr>
                                     <td> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
-                                    <td> <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> </td>
+                                    <td> 
+                                    <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> |
+                                    <a href=\"insert_allergogen.php?idAllergogen=$row[idAllergogen]\"> Editar </a>
+                                    </td>
                                 </tr>"
                     ?>
                 </tbody>        

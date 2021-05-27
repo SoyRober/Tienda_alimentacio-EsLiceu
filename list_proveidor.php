@@ -32,23 +32,26 @@
                 </thead>
                 <tbody>
                     <?php 
-                    $where = "";
-                    if (isset($_GET['Pais'])) {
-                        $where = " WHERE Pais = \"$_GET[Pais]\" ";
-                    }
-                    $query = "SELECT * FROM Proveidor $where ORDER BY Nom;";
-                    $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo    "<tr>
-                                    <td> $row[Poblacio] </td>
-                                    <td> $row[Nom] </td>
-                                    <td> $row[Adreca] </td>
-                                    <td> $row[CP] </td>
-                                    <td> $row[Pais] </td>
-                                    <td> $row[cifProveidor] </td>
-                                    <td> $row[Telefon] </td>
-                                    <td> <a href=\"delete_api_proveidor.php?cifProveidor=$row[cifProveidor]\"> Elimina </a> </td>
-                                </tr>";
+                        $where = "";
+                        if (isset($_GET['Pais'])) {
+                            $where = " WHERE Pais = \"$_GET[Pais]\" ";
+                        }
+                        $query = "SELECT * FROM Proveidor $where ORDER BY Nom;";
+                        $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo    "<tr>
+                                        <td> $row[Poblacio] </td>
+                                        <td> $row[Nom] </td>
+                                        <td> $row[Adreca] </td>
+                                        <td> $row[CP] </td>
+                                        <td> $row[Pais] </td>
+                                        <td> $row[cifProveidor] </td>
+                                        <td> $row[Telefon] </td>
+                                        <td> 
+                                        <a href=\"delete_api_proveidor.php?cifProveidor=$row[cifProveidor]\"> Elimina </a> |
+                                        <a href=\"insert_proveidor.php?cifProveidor=$row[cifProveidor]\"> Editar </a> 
+                                        </td>
+                                    </tr>";
                     }
                     ?>
                 </tbody>        

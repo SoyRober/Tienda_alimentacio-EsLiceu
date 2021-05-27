@@ -6,44 +6,41 @@
         <h2> Insertar producte </h2>
         <h9> Carabirubi, carabiruba </h9>
         <p> Parrafito guapito del bonico </p>
-        
-        <?php
-            $idProducte = '';
-            $nom = '';
-            $codi_de_barres = '';
-            if(isset($_GET['idProducte'])) {
-                $query = "SELECT * FROM producte WHERE idProducte = \"$_GET[idProducte]\";";
-                $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
-                $producte = mysqli_fetch_assoc($result);
-                if($producte["idProducte"]) {
-                    $idProducte = $producte["idProducte"];
-                    $Nom = $producte["Nom"];
-                    $Codi_de_barres = $producte["Codi_de_barres"];
-                    $IVA = $producte["IVA"];
-                    $Preu = $producte["Preu"];
-                    $fkcidProveidor = $producte["fkcifProveidor"];
-                    $Descripcio = $producte["Descripcio"];
+        <form action="insert_api_producte.php" method="post" enctype="multipart/form-data">
+            <?php
+                $idProducte = '';
+                $nom = '';
+                $codi_de_barres = '';
+                if(isset($_GET['idProducte'])) {
+                    $query = "SELECT * FROM producte WHERE idProducte = \"$_GET[idProducte]\";";
+                    $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+                    $producte = mysqli_fetch_assoc($result);
+                    if($producte["idProducte"]) {
+                        $idProducte = $producte["idProducte"];
+                        $Nom = $producte["Nom"];
+                        $Codi_de_barres = $producte["Codi_de_barres"];
+                        $IVA = $producte["IVA"];
+                        $Preu = $producte["Preu"];
+                        $fkcidProveidor = $producte["fkcifProveidor"];
+                        $Descripcio = $producte["Descripcio"];
+                    }
                 }
-            }
-    
             ?>
-
-        <div>
-        <?php
-        if($idProducte){
-            echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
-        }else{
-            echo '<h1> Inserta un nou producte </h1>';
-        }
-        ?>
-
-        <?php
-            if($idProducte){
-                echo "<form action=\"update_api_producte.php?id=$idProducte\" method=\"POST\">";
-            }else{
-                echo ' <form action="insert_api_producte.php" method="POST">';
-            }
-        ?>
+            <div>
+                <?php
+                    if($idProducte){
+                        echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
+                    }else{
+                        echo '<h1> Inserta un nou producte </h1>';
+                    }
+                ?>
+                <?php
+                    if($idProducte){
+                        echo "<form action=\"update_api_producte.php?id=$idProducte\" method=\"POST\">";
+                    }else{
+                        echo ' <form action="insert_api_producte.php" method="POST">';
+                    }
+                ?>
             <div>
                 <label>
                     Nom   
@@ -90,6 +87,13 @@
                         }
                     ?>
                 </select>
+            </div>
+            <div>
+                <label>
+                    Imatge del producte
+                </label>
+                <input type="file" name="producte" id="producte">
+                <input type="button" value="Pujar">
             </div>
             <div>
                 <label>

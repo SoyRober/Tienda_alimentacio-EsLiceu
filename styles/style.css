@@ -1,14 +1,14 @@
-tr{
+tr {
     color:white;
     background-color:#008f39;
 }
 
-body{
+body {
     background-image: url("../img/fondo.jpg");
 }
 
 
-table a{
+table a {
     color:#fff;
     text-decoration: none;
 }
@@ -26,6 +26,10 @@ body h1 {
     margin: auto;
     text-align:center;
     padding: 20px;
+}
+
+footer div.Instagram a{
+    text-decoration: none;
 }
 
 header {
