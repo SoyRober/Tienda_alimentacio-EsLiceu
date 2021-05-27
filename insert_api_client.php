@@ -1,4 +1,5 @@
 <?php   
+//Preguntar Tomeu//  
     require "includes/head.php";
     require "includes/header.php";
     require "includes/mysql.php";
@@ -10,8 +11,9 @@
     echo "<p> Provincia:".$_POST["Provincia"]."</p>";
     echo "<p> Poblacio:".$_POST["Poblacio"]."</p>";
     echo "<p> Adreca:".$_POST["Adreca"]."</p>";    
-    $query="INSERT INTO Client (Nom,dniClient,Pais,CP,Telefon,Provincia,Poblacio,Adreca) 
-    VALUES (\"$_POST[Nom]\", \"$_POST[dniClient]\", \"$_POST[Pais]\", \"$_POST[CP]\", \"$_POST[Telefon]\", \"$_POST[Provincia]\",\"$_POST[Telefon]\",\"$_POST[Adreca]\");";    
+    echo "<p> fkidTargeta:" .$_POST["fkidTargeta"]. "</p>";
+    $query="INSERT INTO Client (Nom,dniClient,Pais,CP,Telefon,Provincia,Poblacio,Adreca,fkidTargeta) 
+    VALUES (\"$_POST[Nom]\", \"$_POST[dniClient]\", \"$_POST[Pais]\", \"$_POST[CP]\", \"$_POST[Telefon]\", \"$_POST[Provincia]\",\"$_POST[Telefon]\",\"$_POST[Adreca]\",\"$_POST[fkidTargeta]\");";   
     echo $query;
     $result = mysqli_query($bbdd, $query);
     if(!$result){

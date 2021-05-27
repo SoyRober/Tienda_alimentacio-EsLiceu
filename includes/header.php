@@ -2,8 +2,8 @@
 <a href="index.php"> Index </a> | 
 <a href="list_targeta.php"> Llista de targetes </a> | 
 <a href="insert_targeta.php"> Targeta </a>
-| 
+<a href="insert_venta.php"> Ventes </a>| 
 <a href="insert_client.php"> Clients </a>
-
-
-
+<a href="list_venta.php"> Llista Vendes </a>
+<a href="list_producte-venta.php"> Llista Producte i Ventes </a>
+<a href="insert_producte-venta.php"> Productes i Ventes </a>

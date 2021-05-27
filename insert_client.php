@@ -3,10 +3,9 @@
     <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php";?>
-        <h2> Insertar client </h2>
-        <h9> Carita , cara </h9>
-        <p> Parrafo con tremenda personalidad </p>
-        <form action="insert_api_client.php" method="post">
+        <h2> Llista de tots els clients </h2>
+            <form action = "list_client.php" method = "GET" >
+       
             <div>
                 <label>
                     Nom
@@ -30,7 +29,7 @@
             <label>
                     Telefon   
                 </label>   
-                <input type="number" max="255" required min="20" name="Descompte">
+                <input type="text" max="255" required min="20" name="Descompte">
             </div>
             <div>
             <label>
@@ -39,15 +38,27 @@
                 <input type="text" max="40" required min="20" name="Descompte">
             
             </div>
+          
             
-            
-                <select name="cifProveidor" required>
-                <option value=""></option>
-                    <?php
-                        $query = "SELECT cifProveidor, Nom FROM Client;";
-                        $result = mysqli_query ($bbdd, $query) OR DIE ("Alguna cosa no va correctament"); 
-                        while ($Proveidor = mysqli_fetch_assoc ($result)) {
-                            echo "<option value = \"$Proveidor[cifProveidor]\">$Proveidor[Nom]</option>";
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                    $query = "SELECT * FROM Targeta ORDER BY idTargeta;";
+                    $result = mysqli_query ($bbdd, $query);
+                    while ($row = mysqli_fetch_assoc($result))
+                        echo    "<tr>
+                                    <td> $row[idAllergogen] </td>
+                                    <td> $row[Nom] </td>
+                                    <td> <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> </td>
+                                </tr>"
+                    ?>
+                </tbody>        
+            </table>
+        </body>
+    </html> 
+
                         }
                     ?>
                 </select>
@@ -66,3 +77,8 @@
         </form>
     </body>
 </html> 
+
+
+
+
+
