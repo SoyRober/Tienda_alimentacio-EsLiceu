@@ -1,9 +1,10 @@
 <!DOCTYPE html>
     <html lang="ca">
     <?php require "includes/head.php";
-    ?>
-        <body>
     
+?>
+        <body>
+        <?php require "includes/header.php";?>
             <h2> Listar  targeta</h2>
             <h6> rubías , cara de sandía </h6>
             <p> Parrafo precioso la verdad </p>
@@ -29,18 +30,27 @@
                     <td> Punts </td>
                     <td> Descompte</td>
                     <td> Nom </td>
+                    <td> Opcions </td>
                 </tr>   
-                <tr>
-                    <td> 191928301S </td>
-                    <td> 90 </td>
-                    <td> 10 </td>
-                    <td> Rober </td>
-                    
-                </tr>
+                <?php 
+                    $query = "SELECT * FROM Targeta ORDER BY idTargeta;";
+                    $result = mysqli_query ($bbdd, $query);
+                    while ($row = mysqli_fetch_assoc($result))
+                        echo    "<tr>
+                                    <td> $row[idTargeta] </td>
+                                    <td> $row[Punts] </td>
+                                    <td> $row[Descompte] </td>
+                                    <td> $row[Nom] </td>
+                                    <td> 
+                                    </td>
+                                    <a href=\"delete_api_targeta.php?idTargeta=$row[idTargeta]\"> Eliminar </a> |
+
+                                </tr>"
+                    ?>
+                </tbody>        
             </table>
         </body>
     </html> 
-
 
     
 

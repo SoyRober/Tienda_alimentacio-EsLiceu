@@ -1,57 +1,53 @@
 <!DOCTYPE html>
     <html lang="ca">
-    <?php require "includes/head.php";
-    ?>
+    <?php require "includes/head.php";?>
         <body>
-        <?php 
-        if(isset($_GET['Client']))
-        $where ="WHERE cl.id= $_GET[Client]";
-        
-        $query="SELECT * FROM Client 
-         ORDER BY Nom ";
-
-        require "includes/header.php";?>
-            <h2> Listar  clientes</h2>
-            <h4> cara de sandía </h4>
-            <p> Parrafo precioso la verdad </p>
-            <FORM action="list_client.php" method="GET">
-            <SELECT NAME="Client">
-            <?php
-            $query="SELECT Nom,id FROM Client
-                order by Nom";
-            $result= mysqli_query($bbdd,$query);
-            while ($row = mysqli_fetch_assoc($result))
-
-                echo "<option value=\"($row[id]\">
-                    $row[nom]</option>"
-                ?>
-                </select>
-                <buttom type ="submit"> FILTRAR 
-                </buttom>
-                </form>
+            <?php require "includes/header.php";?>
+            <h2> Llista de clients </h2>
+            <form action = "list_clients.php" method = "GET" >
+            </form>
             <table>
-                <tr>
-                    <td> dniClient </td>
-                    <td> Pais </td>
-                    <td> Nom </td>
-                    <td> CP </td>
-                    <td> Telefon </td>
-                    <td> Provincia </td>
-                    <td> Poblacio </td>
-                    <td> Adreca </td>
-                    <td> fkidTargeta </td>
-                    <td>  </td>
-                </tr>   
-                <tr>
-                    <td> 191928301S </td>
-                    <td> Espanya </td>
-                    <td> Rober </td>
-                    <td> 01410 </td>
-                    <td> +34 611 20 26 54 </td>
-                    <td> Balears </td>
-                    <td> C/Calle Velazquez </td>
-                    <td> 191928301S </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th> dniClient </th>
+                        <th> Pais </th>
+                        <th> Nom </th>
+                        <th> CP </th>
+                        <th> Telefon </th>
+                        <th> Provincia </th>
+                        <th> Poblacio </th>
+                        <th> Adreca </th>               
+                        <th> idTargeta </th>
+                        <th> Opcions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php 
+                $where = "";
+                if (isset($_GET['Targeta'])) {
+                    $where = " WHERE tr.idTargeta = \"$_GET[Targeta]\" ";
+                }
+                    $query = "SELECT cl.* , tr.idTargeta AS NomTargeta FROM Client AS cl INNER JOIN Targeta AS tr 
+                    ON (pr.fkidTargeta  = tr.idTargeta) 
+                    $where ORDER BY idClient;";
+                    $result = mysqli_query ($bbdd, $query);
+                    while ($row = mysqli_fetch_assoc($result))
+                    echo    "<tr>
+                    <td> $row[dniClient] </td>
+                    <td> $row[Pais] </td>
+                    <td> $row[Nom] </td>
+                    <td> $row[CP] </td>
+                    <td> $row[Telefon] </td>
+                    <td> $row[Provincia] </td>
+                    <td> $row[Poblacio] </td>
+                    <td> $row[Adreca] </td>
+                    <td> $row[fkidTargeta] </td>
+                    <a href=\"delete_api_client.php?dniClient=$row[dniClient]\"> Eliminar </a> |
+
+                                    
+                </tr>"
+                    ?>
+                </tbody>        
             </table>
         </body>
     </html> 

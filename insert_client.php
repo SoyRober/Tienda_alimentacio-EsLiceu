@@ -33,27 +33,31 @@
             </div>
             <div>
             <label>
-                    Pais   
+                    Provincia
                 </label>   
                 <input type="text" max="40" required min="20" name="Descompte">
             
             </div>
-          
+            <div>
+            <label>
+                    Poblacio
+                </label>   
+                <input type="text" max="40" required min="20" name="Descompte">
             
+            </div>      
+            <div>
+            <label>
+                    Adreça
+                </label>   
+                <input type="text" max="40" required min="20" name="Descompte">
+            
+            </div>
 
                     </tr>
                 </thead>
                 <tbody>
-                    <?php 
-                    $query = "SELECT * FROM Targeta ORDER BY idTargeta;";
-                    $result = mysqli_query ($bbdd, $query);
-                    while ($row = mysqli_fetch_assoc($result))
-                        echo    "<tr>
-                                    <td> $row[idAllergogen] </td>
-                                    <td> $row[Nom] </td>
-                                    <td> <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> </td>
-                                </tr>"
-                    ?>
+                    
+                    
                 </tbody>        
             </table>
         </body>

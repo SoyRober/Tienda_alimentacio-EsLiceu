@@ -1,6 +1,6 @@
 
 <?php 
-//Preguntar Tomeu//  
+
     require "includes/head.php";
     require "includes/header.php";
     require "includes/mysql.php";
