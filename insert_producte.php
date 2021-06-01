@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ca">
+<<<<<<< HEAD
     <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php"; ?>
@@ -40,6 +41,49 @@
             }
             ?>
         </div>
+=======
+<?php require "includes/head.php"; ?>
+
+<body>
+    <?php require "includes/header.php"; ?>
+    <h2> Insertar producte </h2>
+    <h9> Carabirubi, carabiruba </h9>
+    <p> Parrafito guapito del bonico </p>
+
+    <?php
+    $idProducte = '';
+    $nom = '';
+    $codi_de_barres = '';
+    $iva = 0;
+    $preu = 0;
+    $fkcidProveidor = 0;
+    $descripcio = '';
+    $imagen = '';
+    if (isset($_GET['idProducte'])) {
+        $query = "SELECT * FROM producte WHERE idProducte = \"$_GET[idProducte]\";";
+        $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+        $producte = mysqli_fetch_assoc($result);
+        if ($producte["idProducte"]) {
+            $idProducte = $producte["idProducte"];
+            $nom = $producte["Nom"];
+            $codi_de_barres = $producte["Codi_de_barres"];
+            $iva = $producte["IVA"];
+            $preu = $producte["Preu"];
+            $fkcidProveidor = $producte["fkcifProveidor"];
+            $descripcio = $producte["Descripcio"];
+            $imagen = $producte["imagen"];
+        }
+    }
+    ?>
+    <div>
+        <?php
+        if ($idProducte) {
+            echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
+        } else {
+            echo '<h1> Inserta un nou producte </h1>';
+        }
+        ?>
+>>>>>>> rober
         <form action="<?= ($idProducte) ? "update_api_producte.php?id=$idProducte" : 'insert_api_producte.php' ?>" method="post" enctype="multipart/form-data">
             <div>
                 <label>
@@ -107,8 +151,14 @@
                 <button type="submit">
                     Enviar
                 </button>
-            </div>    
+            </div>
         </form>
+<<<<<<< HEAD
     </body>
     <?php require "includes/footer.php";?>
 </html> 
+=======
+        <?php require "includes/footer.php";?>
+</body>
+</html>
+>>>>>>> rober
