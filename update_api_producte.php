@@ -10,7 +10,7 @@
     SET Nom = \"$_POST[Nom]\", Codi_de_barres = \"$_POST[Codi_de_barres]\", 
     IVA = \"$_POST[IVA]\", Preu = \"$_POST[Preu]\", fkcifProveidor = \"$_POST[cifProveidor]\", 
     Descripcio = \"$_POST[Descripcio]\"   
-    WHERE idProducte=\"$_GET[idProducte]\";";
+    WHERE idProducte=\"$_GET[id]\";";
     echo $query;
     $result = mysqli_query($bbdd, $query);
     if(!$result){

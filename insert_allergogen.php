@@ -53,4 +53,5 @@
             </div>    
         </form>
     </body>
+    <?php require "includes/footer.php";?>
 </html> 

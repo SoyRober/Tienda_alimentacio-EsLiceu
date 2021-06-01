@@ -1,90 +1,92 @@
 <!DOCTYPE html>
 <html lang="ca">
-    <?php require "includes/head.php";?>
-    <body>
-        <?php require "includes/header.php";?>
-        <h2> Insertar producte </h2>
-        <h9> Carabirubi, carabiruba </h9>
-        <p> Parrafito guapito del bonico </p>
-        <form action="insert_api_producte.php" method="post" enctype="multipart/form-data">
-            <?php
-                $idProducte = '';
-                $nom = '';
-                $codi_de_barres = '';
-                if(isset($_GET['idProducte'])) {
-                    $query = "SELECT * FROM producte WHERE idProducte = \"$_GET[idProducte]\";";
-                    $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
-                    $producte = mysqli_fetch_assoc($result);
-                    if($producte["idProducte"]) {
-                        $idProducte = $producte["idProducte"];
-                        $Nom = $producte["Nom"];
-                        $Codi_de_barres = $producte["Codi_de_barres"];
-                        $IVA = $producte["IVA"];
-                        $Preu = $producte["Preu"];
-                        $fkcidProveidor = $producte["fkcifProveidor"];
-                        $Descripcio = $producte["Descripcio"];
-                    }
-                }
-            ?>
-            <div>
-                <?php
-                    if($idProducte){
-                        echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
-                    }else{
-                        echo '<h1> Inserta un nou producte </h1>';
-                    }
-                ?>
-                <?php
-                    if($idProducte){
-                        echo "<form action=\"update_api_producte.php?id=$idProducte\" method=\"POST\">";
-                    }else{
-                        echo ' <form action="insert_api_producte.php" method="POST">';
-                    }
-                ?>
+<?php require "includes/head.php"; ?>
+
+<body>
+    <?php require "includes/header.php"; ?>
+    <h2> Insertar producte </h2>
+    <h9> Carabirubi, carabiruba </h9>
+    <p> Parrafito guapito del bonico </p>
+
+    <?php
+    $idProducte = '';
+    $nom = '';
+    $codi_de_barres = '';
+    $iva = 0;
+    $preu = 0;
+    $fkcidProveidor = 0;
+    $descripcio = '';
+    $imagen = '';
+    if (isset($_GET['idProducte'])) {
+        $query = "SELECT * FROM producte WHERE idProducte = \"$_GET[idProducte]\";";
+        $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+        $producte = mysqli_fetch_assoc($result);
+        if ($producte["idProducte"]) {
+            $idProducte = $producte["idProducte"];
+            $nom = $producte["Nom"];
+            $codi_de_barres = $producte["Codi_de_barres"];
+            $iva = $producte["IVA"];
+            $preu = $producte["Preu"];
+            $fkcidProveidor = $producte["fkcifProveidor"];
+            $descripcio = $producte["Descripcio"];
+            $imagen = $producte["imagen"];
+        }
+    }
+    ?>
+    <div>
+        <?php
+        if ($idProducte) {
+            echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
+        } else {
+            echo '<h1> Inserta un nou producte </h1>';
+        }
+        ?>
+        <form action="<?= ($idProducte) ? "update_api_producte.php?id=$idProducte" : 'insert_api_producte.php' ?>" method="post" enctype="multipart/form-data">
             <div>
                 <label>
-                    Nom   
+                    Nom
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom">
-            </div>
-            <div>    
-                <label>
-                    Codi de barres    
-                </label>
-                <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres">
+                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
             </div>
             <div>
                 <label>
-                    IVA   
-                </label>    
-                <input type="radio" name="IVA" value="4"> 4
-                <input type="radio" name="IVA" value="10"> 10 
-                <input type="radio" name="IVA" value="21"> 21 
+                    Codi de barres
+                </label>
+                <input type="text" maxlength="255" required minlength="5" name="Codi_de_barres" value="<?=$codi_de_barres?>">
             </div>
-            <div>    
+            <div>
                 <label>
-                    Preu  
-                </label>   
-                <input type="number" required min="0,01" name="Preu" step="0.01">
+                    IVA
+                </label>
+                <input type="radio" require name="IVA" value="4" <?= ($iva == 4) ? 'checked' : ''?> > 4
+                <input type="radio" require name="IVA" value="10" <?= ($iva == 10) ? 'checked' : ''?>  > 10
+                <input type="radio" require name="IVA" value="21" <?= ($iva == 21) ? 'checked' : ''?>  > 21
             </div>
-            <div>    
+            <div>
+                <label>
+                    Preu
+                </label>
+                <input type="number" required min="0,01" name="Preu" step="0.01" value="<?=$preu?>">
+            </div>
+            <div>
                 <label>
                     Descripció
-                </label>   
-                <input type="text" max="150" required min="5" name="Descripcio">
+                </label>
+                <input type="text" max="150" required min="5" name="Descripcio" value="<?=$descripcio?>">
             </div>
             <div>
-            <label>
-                Proveïdor
-            </label>
+                <label>
+                    Proveïdor
+                </label>
                 <select name="cifProveidor" required>
-                <option value="">  </option>
+                    <option value=""> </option>
                     <?php
-                        $query = "SELECT cifProveidor, Nom FROM Proveidor;";
-                        $result = mysqli_query ($bbdd, $query) OR DIE ("Alguna cosa no va correctament"); 
-                        while ($Proveidor = mysqli_fetch_assoc ($result)) {
-                            echo "<option value = \"$Proveidor[cifProveidor]\">$Proveidor[Nom]</option>";
-                        }
+                    $query = "SELECT cifProveidor, Nom FROM Proveidor;";
+                    $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va correctament");
+                    while ($Proveidor = mysqli_fetch_assoc($result)) {
+                        $selected = ($Proveidor['cifProveidor'] == $fkcidProveidor) ? 'selected' : '';
+                        echo "<option $selected value = \"$Proveidor[cifProveidor]\">$Proveidor[Nom]</option>";
+                    }
                     ?>
                 </select>
             </div>
@@ -92,7 +94,7 @@
                 <label>
                     Imatge del producte
                 </label>
-                <input type="file" name="producte" id="producte">
+                <input type="file" name="producte" id="producte" value="<?=$imagen?>">
                 <input type="button" value="Pujar">
             </div>
             <div>
@@ -105,7 +107,8 @@
                 <button type="submit">
                     Enviar
                 </button>
-            </div>    
+            </div>
         </form>
-    </body>
-</html> 
+        <?php require "includes/footer.php";?>
+</body>
+</html>

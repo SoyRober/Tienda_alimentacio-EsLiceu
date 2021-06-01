@@ -1,11 +1,10 @@
-<!-- Preguntar a Tomeu  -->
 <footer>
     <div class="Instagram">
         Instagrams:
-            @<a href="instagram.com/rober.zednanref">rober.zednanref <a>
+            <a href="https://instagram.com/rober.zednanref">@rober.zednanref <a>
     </div>
     <br>
-    <div class="copy">
+    <div class="copy" al>
         ©2021 Constas
     </div>    
 </footer>

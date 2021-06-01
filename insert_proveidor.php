@@ -6,45 +6,39 @@
         <h2> Insertar proveidor </h2>
         <h9> Carabirubi, carabiruba </h9>
         <p> Parrafito guapito del bonico </p>
-        <form action="insert_api_proveidor.php" method="post">
-
-        <!-- Preguntar a Tomeu "Por què no me pone el cif que estoy cambiando -->
-            
-            <?php
-                $cifProveidor = "";
-                $Nom = "";
-                $CP = "";
-                if(isset($_GET['cifProveidor'])){
-                    $query = "SELECT * FROM proveidor WHERE cifProveidor = \"$_GET[cifProveidor]\";";
-                    $result = mysqli_query($bbdd, $query);
-                    $proveidor = mysqli_fetch_assoc($result);
-                    if($proveidor["cifProveidor"]) {
-                        $cifProveidor = $proveidor["cifProveidor"];
-                        $Nom = $proveidor["Nom"];
-                        $CP = $proveidor["CP"];
-                        $Poblacio = $proveidor["Poblacio"];
-                        $Telefon = $proveidor["Telefon"];
-                        $fkidProveidor = $proveidor["cifProveidor"];
-                        $Adreca = $proveidor["Adreca"];
-                    }
+        <?php
+            $cifproveidor = '';
+            $nom = '';
+            $codi_de_barres = '';
+            $iva = 0;
+            $preu = 0;
+            $fkcidProveidor = 0;
+            $descripcio = '';
+            $imagen = '';
+            if (isset($_GET['cifproveidor'])) {
+                $query = "SELECT * FROM producte WHERE cifProveidor = \"$_GET[cifProveidor]\";";
+                $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+                $proveidor = mysqli_fetch_assoc($result);
+                if ($proveidor["cifProveidor"]) {
+                    $cifproveidor = $proveidor["cifProveidor"];
+                    $nom = $proveidor["Nom"];
+                    $pais = $proveidor["Pais"];
+                    $poblacio = $proveidor["Poblacio"];
+                    $telefon = $proveidor["Telefon"];
+                    $adreca = $proveidor["Adreca"];
+                    $descripcio = $proveidor["Descripcio"];
                 }
-                ?>
-            <div>
-            <?php
-                if($cifProveidor){
-                    echo '<h1> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h1>';
-                }else{
-                    echo '<h1> Inserta un nou proveïdor </h1>';
-                }
-            ?>
-
-            <?php
-                if($cifProveidor){
-                    echo ' <form action="update_api_producte.php" method="POST">';
-                }else{
-                    echo ' <form action="insert_api_producte.php" method="POST">';
-                }
-            ?>
+            }
+        ?>
+    <div>
+        <?php
+        if ($cifProveidor) {
+            echo '<h1> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h1>';
+        } else {
+            echo '<h1> Inserta un nou proveïdor </h1>';
+        }
+        ?>
+        <form action="<?= ($cifProveidor) ? 'update_api_proveidor.php?id=$idProducte' : 'insert_api_proveidor.php' ?>" method="post" enctype="multipart/form-data">
             <div>
                 <label>
                     Nom   
@@ -100,4 +94,5 @@
             </div>    
         </form>
     </body>
+    <?php require "includes/footer.php";?>
 </html> 

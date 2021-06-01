@@ -35,6 +35,7 @@
                 </tbody>        
             </table>
         </body>
+        <?php require "includes/footer.php";?>
     </html> 
 
 

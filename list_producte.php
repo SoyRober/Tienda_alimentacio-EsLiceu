@@ -16,6 +16,11 @@
                     ?>
                 </select>
                 <button type = "submit"> Filtrar </button>
+                <br>
+                <label>
+                    Resetear filtre
+                </label>
+                <input type="reset" class="reset" value="Borrar filtre">
             </form>
             <table>
                 <thead>
@@ -51,15 +56,16 @@
                                     <td> $row[Preu] </td>
                                     <td> $row[fkcifProveidor] </td>
                                     <td> 
-                                    <a href=\"list_pro-al.php?idProducte=$row[idProducte]\"> Consulta alergogens </a> | 
-                                    <a href=\"delete_api_producte.php?idProducte=$row[idProducte]\"> Elimina </a> |
-                                    <a href=\"insert_producte.php?idProducte=$row[idProducte]\"> Editar </a>
+                                    <button onclick=\"window.location.href='list_pro-al.php?idProducte=$row[idProducte] '\"> Consultar al·lergògen </button> |
+                                    <button onclick=\"window.location.href='delete_api_producte.php?idProducte=$row[idProducte] '\"> Elimina </button> |
+                                    <button onclick=\"window.location.href='insert_producte.php?idProducte=$row[idProducte] '\"> Editar </button>
                                     </td>
                                 </tr>"
                     ?>
                 </tbody>        
             </table>
         </body>
+        <?php require "includes/footer.php";?>
     </html> 
 
 

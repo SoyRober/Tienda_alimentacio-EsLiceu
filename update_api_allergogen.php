@@ -1,7 +1,7 @@
 <?php 
     require "includes/mysql.php";
     echo "<p> Nom:".$_POST["Nom"]."</p>"; 
-    $query="UPDATE producte
+    $query="UPDATE allergogen
     SET Nom = \"$_POST[Nom]\"   
     WHERE idAllergogen=\"$_GET[idAllergogen]\";";
     echo $query;

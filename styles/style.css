@@ -28,7 +28,7 @@ body h1 {
     padding: 20px;
 }
 
-footer div.Instagram a{
+footer div.Instagram a {
     text-decoration: none;
 }
 
@@ -36,6 +36,10 @@ header {
     
     display: inline-block;
     width: 97%;
+}
+
+button.reset {
+    padding-bottom: 10px;
 }
 
 table {
@@ -129,4 +133,4 @@ img{
     margin-right: auto;
     margin-top: 50px;
     width: 40%;
-}
+} 
