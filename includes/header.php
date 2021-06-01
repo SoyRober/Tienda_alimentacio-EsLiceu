@@ -7,7 +7,7 @@
     </nav>
     <nav id="menu">
         <ul>
-            <li> <a href="#"> Producte </a>
+            <li> <a href="#"> Productes </a>
         <ul>
             <li> <a href="insert_producte.php"> Insertar nou producte </a> </li>
             <li> <a href="list_producte.php"> Llista dels productes </a> </li>
@@ -15,7 +15,7 @@
     </nav>
     <nav id="menu">
         <ul>
-            <li> <a href="#"> Proveidor </a>
+            <li> <a href="#"> Proveidors </a>
         <ul>
             <li> <a href="insert_proveidor.php"> Insertar nou proveidor </a> </li>
             <li> <a href="list_proveidor.php"> Llista de proveidors </a> </li>
@@ -31,10 +31,26 @@
     </nav>
     <nav id="menu">
         <ul>
-            <li> <a href="#"> Targeta </a>
+            <li> <a href="#"> Targetes </a>
         <ul>
-            <li> <a href="insert_targeta.php"> Insertar nou producte </a> </li>
-            <li> <a href="list_targeta.php"> Llista dels productes </a> </li>
+            <li> <a href="insert_targeta.php"> Insertar nova targeta </a> </li>
+            <li> <a href="list_targeta.php"> Llista de targetes </a> </li>
+        </ul>
+    </nav>
+    <nav id="menu">
+        <ul>
+            <li> <a href="#"> Clients </a>
+        <ul>
+            <li> <a href="insert_client.php"> Insertar nou client </a> </li>
+            <li> <a href="list_client.php"> Llista dels clients </a> </li>
+        </ul>
+    </nav>
+    <nav id="menu">
+        <ul>
+            <li> <a href="#"> Ventes </a>
+        <ul>
+            <li> <a href="insert_targeta.php"> Insertar nou venta </a> </li>
+            <li> <a href="list_targeta.php"> Llista de les ventes </a> </li>
         </ul>
     </nav>
 </header>

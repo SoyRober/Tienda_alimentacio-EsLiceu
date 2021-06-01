@@ -16,6 +16,11 @@
                     ?>
                 </select>
                 <button type = "submit"> Filtrar </button>
+                <br>
+                <label>
+                    Resetear filtre
+                </label>
+                <input type="reset" class="reset" value="Borrar filtre">
             </form>
             <table>
                 <thead>
@@ -48,8 +53,8 @@
                                         <td> $row[cifProveidor] </td>
                                         <td> $row[Telefon] </td>
                                         <td> 
-                                        <a href=\"delete_api_proveidor.php?cifProveidor=$row[cifProveidor]\"> Elimina </a> |
-                                        <a href=\"insert_proveidor.php?cifProveidor=$row[cifProveidor]\"> Editar </a> 
+                                        <button onclick=\"window.location.href='delete_api_proveidor.php?idProducte=$row[cifProveidor] '\"> Elimina </button> |
+                                        <button onclick=\"window.location.href='insert_proveidor.php?idProducte=$row[cifProveidor] '\"> Editar </button>
                                         </td>
                                     </tr>";
                     }
@@ -57,6 +62,7 @@
                 </tbody>        
             </table>
         </body>
+        <?php require "includes/footer.php";?>
     </html> 
 
 

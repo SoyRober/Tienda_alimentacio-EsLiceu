@@ -23,14 +23,15 @@
                                     <td> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
                                     <td> 
-                                    <a href=\"delete_api_allergogen.php?idAllergogen=$row[idAllergogen]\"> Elimina </a> |
-                                    <a href=\"insert_allergogen.php?idAllergogen=$row[idAllergogen]\"> Editar </a>
+                                    <button onclick=\"window.location.href='delete_api_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Elimina </button> |
+                                    <button onclick=\"window.location.href='update_api_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Editar </button>
                                     </td>
                                 </tr>"
                     ?>
                 </tbody>        
             </table>
         </body>
+        <?php require "includes/footer.php";?>
     </html> 
 
 

@@ -4,8 +4,6 @@
     <body>
         <?php require "includes/header.php";?>
         <h2> Insertar producte </h2>
-        <h9> Carabirubi, carabiruba </h9>
-        <p> Parrafito guapito del bonico </p>
         <form action="insert_api_allergogen.php" method="post">
             <?php
                 $idAllergogen = '';
@@ -25,7 +23,7 @@
                     if($idAllergogen){
                         echo '<h1> Actualitzant el producte amb ID: ' . $idAllergogen . '</h1>';
                     }else{
-                        echo '<h1> Inserta un nou al·lergògen </h1>';
+                        echo '<h2> Inserta un nou al·lergògen </h2>';
                     }
                 ?>
                 <?php
@@ -39,7 +37,7 @@
                 <label>
                     Nom   
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom">
+                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
             <div>
                 <label>
                     Resetear
@@ -53,4 +51,5 @@
             </div>    
         </form>
     </body>
+    <?php require "includes/footer.php";?>
 </html> 

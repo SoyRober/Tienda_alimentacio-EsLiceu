@@ -1,6 +1,7 @@
 tr {
     color:white;
     background-color:#008f39;
+    border:5px solid #545353;
 }
 
 body {
@@ -28,21 +29,43 @@ body h1 {
     padding: 20px;
 }
 
-footer div.Instagram a{
-    text-decoration: none;
+footer p.insta {
+    padding-left: 800px;
 }
 
+footer p.copy {
+    text-align: center;
+}
+
+footer p {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+footer p a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+    background-color: green;
+    color: white;
+}
 header {
     
     display: inline-block;
-    width: 97%;
+    width: 98%;
 }
 
 table {
     margin: 0 auto;
 }
 
-thead th{
+thead th {
     background-color: #008f39;
 }
 
