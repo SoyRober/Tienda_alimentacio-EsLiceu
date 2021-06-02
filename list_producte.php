@@ -41,7 +41,7 @@
                     if (isset($_GET['Proveidor'])) {
                         $where = " WHERE pd.cifProveidor = \"$_GET[Proveidor]\" ";
                     }
-                    $query = "Select pr.*, pd.Nom AS NomProveidor 
+                    $query = "SELECT pr.*, pd.Nom AS NomProveidor 
                         FROM Producte AS pr INNER JOIN Proveidor AS pd
                         ON (pr.fkcifProveidor = pd.cifProveidor)
                         $where ORDER BY idProducte";

@@ -9,20 +9,11 @@
         <?php
             $cifproveidor = '';
             $nom = '';
-<<<<<<< HEAD
             $pais = '';
             $poblacio = 0;
             $telefon = 0;
             $adreca = 0;
             $cp = '';
-=======
-            $codi_de_barres = '';
-            $iva = 0;
-            $preu = 0;
-            $fkcidProveidor = 0;
-            $descripcio = '';
-            $imagen = '';
->>>>>>> rober
             if (isset($_GET['cifproveidor'])) {
                 $query = "SELECT * FROM producte WHERE cifProveidor = \"$_GET[cifProveidor]\";";
                 $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
@@ -34,7 +25,6 @@
                     $poblacio = $proveidor["Poblacio"];
                     $telefon = $proveidor["Telefon"];
                     $adreca = $proveidor["Adreca"];
-<<<<<<< HEAD
                     $cp = $proveidor["Descripcio"];
                 }
             }
@@ -58,21 +48,6 @@
             ?>
         </div>
         <form action="<?= ($cifProveidor) ? 'update_api_proveidor.php?id=$cifProveidor' : 'insert_api_proveidor.php' ?>" method="post">
-=======
-                    $descripcio = $proveidor["Descripcio"];
-                }
-            }
-        ?>
-    <div>
-        <?php
-        if ($cifProveidor) {
-            echo '<h1> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h1>';
-        } else {
-            echo '<h1> Inserta un nou proveïdor </h1>';
-        }
-        ?>
-        <form action="<?= ($cifProveidor) ? 'update_api_proveidor.php?id=$idProducte' : 'insert_api_proveidor.php' ?>" method="post" enctype="multipart/form-data">
->>>>>>> rober
             <div>
                 <label>
                     Nom   

@@ -8,12 +8,13 @@
     echo "<p> cifProveidor:".$_POST["cifProveidor"]."</p>";
     $query="INSERT INTO Producte (Nom,Codi_de_barres,IVA,Descripcio,Preu,fkcifProveidor) 
     VALUES (\"$_POST[Nom]\", \"$_POST[Codi_de_barres]\", \"$_POST[IVA]\", 
-    \"$_POST[Descripcio]\", \"$_POST[Preu]\", \"$_POST[cifProveidor]\");";
+    \"$_POST[Descripcio]\", \"$_POST[Preu]\", \"$_POST[cifProveidor]\", imagen = \"$_GET[id].jpg\";";
     echo $query;
     $result = mysqli_query($bbdd, $query);
     if(!$result){
-        echo "error query";
-        mysqli_error($bbdd);
-        print (mysqli_error($bbdd));
+        $error = (mysqli_error($bbdd));
+        header('Location: error.php?error=' . $error);
+    }else{
+        header('Location: ok.php');
     }
 ?>

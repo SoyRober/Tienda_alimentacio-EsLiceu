@@ -2,9 +2,10 @@
     require "includes/mysql.php";
     $query="DELETE FROM Proveidor WHERE cifProveidor=\"$_GET[cifProveidor]\";";
     $result=mysqli_query($bbdd,$query);
-        if($result){
-            echo "S'ha pogut eliminar aquest proveidor";
+        if(!$result){
+            $error = (mysqli_error($bbdd));
+            header('Location: error.php?error=' . $error);
         }else{
-            print(mysqli_error($bbdd));
+            header('Location: ok.php');
         }
 ?>

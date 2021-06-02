@@ -94,8 +94,13 @@
                 <label>
                     Imatge del producte
                 </label>
-                <input type="file" name="producte" id="producte" value="<?=$imagen?>">
-                <input type="button" value="Pujar">
+                <input type="file" accept="image/jpeg, image/jpg" name="imgProducte" id="producte"/>
+                <p>Imatge Actual</p>
+                <?php
+                if($imagen){
+                    echo "<img width=\"30px\" src=\"img/productes/$imagen\"/>";
+                }   
+                ?>
             </div>
             </div>
             <div>
