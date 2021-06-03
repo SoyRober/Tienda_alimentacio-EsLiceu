@@ -8,6 +8,14 @@ body {
     background-image: url("../img/fondo.jpg");
 }
 
+td {
+    padding: 5px;
+}
+
+table {
+    position: relative;
+    top:50px;
+}
 
 table a {
     color:#fff;
@@ -17,6 +25,50 @@ table a {
 select {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+select.select {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    position: relative;
+    left: 10px;
+    top:10px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #b6d6ac;
+    border-radius: 6px;
+    border: 2px solid #00cf0a;
+}
+
+button.filtrar {
+    text-decoration: none;
+    color: black;
+    z-index: 3;
+    padding: 10px;
+    position: relative;
+    left: 15px;
+    top:10px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #b6d6ac;
+    border-radius: 6px;
+    border: 2px solid #00cf0a;
+}
+
+a.reinici_filtre {
+    text-decoration: none;
+    z-index: 3;
+    color: black;
+    padding: 10px;
+    position: relative;
+    left: 105px;
+    top:30px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #b6d6ac;
+    border-radius: 6px;
+    border: 2px solid #00cf0a;
 }
 
 body h1 {
@@ -49,6 +101,8 @@ footer p a {
 }
 
 footer {
+    position: sticky;
+    top: 120px;
     bottom: 0;
     width: 99%;
     background-color: green;
@@ -73,6 +127,7 @@ thead th {
 }
 
 #menu ul {
+    z-index: 2;
     list-style:none;
     margin:10;
     padding:0;
@@ -80,6 +135,7 @@ thead th {
    
 #menu ul li {
     background-color:#008f39;
+    z-index: 2;
 }
 
 #menu ul a {
@@ -92,6 +148,7 @@ thead th {
     font-family:"Arial";
     text-transform:uppercase;
     letter-spacing:1px;
+    z-index: 2;
 }
 
 #menu ul li {
@@ -99,19 +156,23 @@ thead th {
     float:left;
     margin:0;
     padding:0;
+    z-index: 2;
 }
 
 #menu ul li:hover {
     background:#4f9453;
+    z-index: 2;
 }
 
 #menu ul ul {
+    z-index: 2;
     display:none;
     position:absolute;
     top:100%;
     left:0;
     background:#eee;
     padding:0;
+    z-index: 2;
 }
    
 #menu ul ul li {
@@ -122,10 +183,12 @@ thead th {
 #menu ul ul a {
     line-height:120%;
     padding:10px 15px;
+    z-index: 2;
 }
 
 #menu ul li:hover > ul {
     display:block;
+    z-index: 2;
 }
 
 html {

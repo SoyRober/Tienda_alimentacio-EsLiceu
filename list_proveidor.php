@@ -16,12 +16,8 @@
                     ?>
                 </select>
                 <button type = "submit"> Filtrar </button>
-                <br>
-                <label>
-                    Resetear filtre
-                </label>
-                <input type="reset" class="reset" value="Borrar filtre">
             </form>
+            <a class="boto_personalitzat" href=list_producte.php> Reiniciar filtre </a>
             <table>
                 <thead>
                     <tr>
@@ -53,8 +49,8 @@
                                         <td> $row[cifProveidor] </td>
                                         <td> $row[Telefon] </td>
                                         <td> 
-                                        <button onclick=\"window.location.href='delete_api_proveidor.php?idProducte=$row[cifProveidor] '\"> Elimina </button> |
-                                        <button onclick=\"window.location.href='insert_proveidor.php?idProducte=$row[cifProveidor] '\"> Editar </button>
+                                        <button onclick=\"window.location.href='delete_api_proveidor.php?cifProveidor=$row[cifProveidor] '\"> Elimina </button> |
+                                        <button onclick=\"window.location.href='insert_proveidor.php?cifProveidor=$row[cifProveidor] '\"> Editar </button>
                                         </td>
                                     </tr>";
                     }

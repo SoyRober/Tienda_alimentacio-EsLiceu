@@ -27,9 +27,9 @@
                     $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
                     while ($row = mysqli_fetch_assoc($result)){
                         echo "<tr>
-                                    <td> $row[idAllergogen] </td>
-                                    <td> $row[Nom] </td>
-                                </tr>";
+                                <td> $row[idAllergogen] </td>
+                                <td> $row[Nom] </td>
+                            </tr>";
                     }
                     ?>
                 </tbody>        

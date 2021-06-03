@@ -4,16 +4,13 @@
     <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php"; ?>
-        <h2> Insertar producte </h2>
-        <h9> Carabirubi, carabiruba </h9>
-        <p> Parrafito guapito del bonico </p>
         <?php
         $idProducte = '';
         $nom = '';
         $codi_de_barres = '';
-        $iva = 0;
-        $preu = 0;
-        $fkcidProveidor = 0;
+        $iva = '';
+        $preu = '';
+        $fkcidProveidor = '';
         $descripcio = '';
         $imagen = '';
         if (isset($_GET['idProducte'])) {
@@ -34,11 +31,11 @@
         ?>
         <div>
             <?php
-            if ($idProducte) {
-                echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
-            } else {
-                echo '<h1> Inserta un nou producte </h1>';
-            }
+                if ($idProducte) {
+                    echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
+                } else {
+                    echo '<h2> Inserta un nou producte </h2>';
+                }
             ?>
         </div>
         <form action="<?= ($idProducte) ? "update_api_producte.php?id=$idProducte" : 'insert_api_producte.php' ?>" method="post" enctype="multipart/form-data">

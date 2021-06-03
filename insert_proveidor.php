@@ -3,29 +3,26 @@
     <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php";?>
-        <h2> Insertar proveidor </h2>
-        <h9> Carabirubi, carabiruba </h9>
-        <p> Parrafito guapito del bonico </p>
         <?php
-            $cifproveidor = '';
+            $cifProveidor = '';
             $nom = '';
             $pais = '';
-            $poblacio = 0;
-            $telefon = 0;
-            $adreca = 0;
+            $poblacio = '';
+            $telefon = '';
+            $adreca = '';
             $cp = '';
-            if (isset($_GET['cifproveidor'])) {
-                $query = "SELECT * FROM producte WHERE cifProveidor = \"$_GET[cifProveidor]\";";
+            if (isset($_GET['cifProveidor'])) {
+                $query = "SELECT * FROM proveidor WHERE cifProveidor = \"$_GET[cifProveidor]\";";
                 $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
                 $proveidor = mysqli_fetch_assoc($result);
                 if ($proveidor["cifProveidor"]) {
-                    $cifproveidor = $proveidor["cifProveidor"];
+                    $cifProveidor = $proveidor["cifProveidor"];
                     $nom = $proveidor["Nom"];
                     $pais = $proveidor["Pais"];
                     $poblacio = $proveidor["Poblacio"];
                     $telefon = $proveidor["Telefon"];
                     $adreca = $proveidor["Adreca"];
-                    $cp = $proveidor["Descripcio"];
+                    $cp = $proveidor["CP"];
                 }
             }
         ?>
@@ -34,20 +31,11 @@
             if ($cifProveidor) {
                 echo '<h1> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h1>';
             } else {
-                echo '<h1> Inserta un nou proveïdor </h1>';
+                echo '<h3> Inserta un nou proveïdor </h3>';
             }
             ?>
         </div>
-        <div>
-            <?php
-            if ($cifProveidor) {
-                echo '<h1> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h1>';
-            } else {
-                echo '<h1> Inserta un nou proveïdor </h1>';
-            }
-            ?>
-        </div>
-        <form action="<?= ($cifProveidor) ? 'update_api_proveidor.php?id=$cifProveidor' : 'insert_api_proveidor.php' ?>" method="post">
+        <form action="<?= ($cifProveidor) ? 'update_api_proveidor.php?cifProveidor=$cifProveidor' : 'insert_api_proveidor.php' ?>" method="post">
             <div>
                 <label>
                     Nom   
@@ -64,7 +52,7 @@
                 <label>
                     Població  
                 </label>   
-                <input type="number" max="99999999" required name="Poblacio" value="<?=$poblacio?>">
+                <input type="number" max="99999999" name="Poblacio" value="<?=$poblacio?>">
             </div>
             <div>    
                 <label>
@@ -76,19 +64,19 @@
                 <label>
                     Pais
                 </label>   
-                <input type="text" maxlenght="150" required minlenght="5" name="Pais">
+                <input type="text" maxlenght="150" required minlenght="5" name="Pais" value="<?=$pais?>">
             </div>
             <div>    
                 <label>
                     Adreça
                 </label>   
-                <input type="text" maxlenght="150" required minlenght="5" name="Adreca">
+                <input type="text" maxlenght="150" required minlenght="5" name="Adreca" value="<?=$adreca?>">
             </div>
             <div>
                 <label>
                     CIF del proveidor
                 </label>    
-                <input type="text" required maxlenght="9" minlenght="9" name="cifProveidor" readonly>
+                <input type="text" required maxlenght="9" minlenght="9" name="cifProveidor" readonly value="<?=$cifProveidor?>">
             </div>
             <div>
                 <label>
