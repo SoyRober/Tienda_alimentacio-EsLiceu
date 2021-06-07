@@ -29,9 +29,9 @@
         <div>
             <?php
             if ($cifProveidor) {
-                echo '<h1> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h1>';
+                echo '<h2> Actualitzant el proveïdor amb cif: ' . $cifProveidor . '</h2>';
             } else {
-                echo '<h3> Inserta un nou proveïdor </h3>';
+                echo '<h2> Inserta un nou proveïdor </h2>';
             }
             ?>
         </div>

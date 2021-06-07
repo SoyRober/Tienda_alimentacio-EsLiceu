@@ -24,7 +24,7 @@
                                     <td> $row[Nom] </td>
                                     <td> 
                                     <button onclick=\"window.location.href='delete_api_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Elimina </button> |
-                                    <button onclick=\"window.location.href='update_api_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Editar </button>
+                                    <button onclick=\"window.location.href='insert_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Editar </button>
                                     </td>
                                 </tr>"
                     ?>

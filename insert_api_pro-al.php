@@ -1,7 +1,7 @@
 <?php 
     require "includes/mysql.php";
-    echo "<p> Nom:".$_POST["fkidProducte"]."</p>"; 
-    echo "<p> Poblacio:".$_POST["fkidAllergogen"]."</p>"; 
+    echo "<p> fkidProducte:".$_POST["fkidProducte"]."</p>"; 
+    echo "<p> fkidAllergogen:".$_POST["fkidAllergogen"]."</p>"; 
     $query="INSERT INTO Pro_Al (fkidProducte,fkidAllergogen) 
     VALUES (\"$_POST[fkidProducte]\", \"$_POST[fkidAllergogen]\";";
     echo $query;

@@ -32,7 +32,7 @@
         <div>
             <?php
                 if ($idProducte) {
-                    echo '<h1> Actualitzant el producte amb ID: ' . $idProducte . '</h1>';
+                    echo '<h2> Actualitzant el producte amb ID: ' . $idProducte . '</h2>';
                 } else {
                     echo '<h2> Inserta un nou producte </h2>';
                 }
@@ -107,7 +107,7 @@
                 <input type="reset">
             </div>
             <div>
-                <button type="submit">
+                <button class="enviar" type="submit">
                     Enviar
                 </button>
             </div>

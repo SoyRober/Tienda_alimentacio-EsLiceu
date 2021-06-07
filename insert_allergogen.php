@@ -3,7 +3,6 @@
     <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php";?>
-        <h2> Insertar producte </h2>
         <form action="insert_api_allergogen.php" method="post">
             <?php
                 $idAllergogen = '';
@@ -21,7 +20,7 @@
             <div>
                 <?php
                     if($idAllergogen){
-                        echo '<h1> Actualitzant el producte amb ID: ' . $idAllergogen . '</h1>';
+                        echo '<h2> Actualitzant al·lergògen amb ID: ' . $idAllergogen . '</h2>';
                     }else{
                         echo '<h2> Inserta un nou al·lergògen </h2>';
                     }

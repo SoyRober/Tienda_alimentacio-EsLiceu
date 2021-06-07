@@ -5,7 +5,7 @@
             <?php require "includes/header.php";?>
             <h2> Llista de tots els proveidors </h2>
             <form action = "list_proveidor.php" method = "GET" >
-                <select name="Pais">
+                <select class="select" name="Pais">
                     <option value="">  </option>
                     <?php
                         $query = "SELECT  DISTINCT Pais FROM Proveidor ORDER BY Nom;";
@@ -15,9 +15,9 @@
                             }
                     ?>
                 </select>
-                <button type = "submit"> Filtrar </button>
+                <button class="filtrar" type = "submit"> Filtrar </button>
             </form>
-            <a class="boto_personalitzat" href=list_producte.php> Reiniciar filtre </a>
+            <a class="reinici_filtre" href=list_producte.php> Reiniciar filtre </a>
             <table>
                 <thead>
                     <tr>
