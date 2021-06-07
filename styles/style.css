@@ -48,7 +48,6 @@ select.select {
 button.filtrar {
     text-decoration: none;
     color: black;
-    z-index: 3;
     padding: 10px;
     position: relative;
     left: 15px;
@@ -105,9 +104,8 @@ footer p a {
 }
 
 footer {
-    position: sticky;
-    top: 120px;
-    bottom: 0;
+    float: left;
+    margin-top: 100px;
     width: 99%;
     background-color: green;
     color: white;

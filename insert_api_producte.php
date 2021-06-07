@@ -6,6 +6,7 @@
     echo "<p> Descripcio:".$_POST["Descripcio"]."</p>";  
     echo "<p> Preu:".$_POST["Preu"]."</p>";
     echo "<p> cifProveidor:".$_POST["cifProveidor"]."</p>";
+
     $img = '';
     if($_FILES["imgProducte"]){
         //PUJAM IMATGE
@@ -16,9 +17,10 @@
             $img = ", imagen = \"$_GET[id].jpg\" ";
         }
     }
-    $query="INSERT INTO Producte (Nom,Codi_de_barres,IVA,Descripcio,Preu,fkcifProveidor) 
-    VALUES (\"$_POST[Nom]\", \"$_POST[Codi_de_barres]\", \"$_POST[IVA]\", 
-    \"$_POST[Descripcio]\", \"$_POST[Preu]\", \"$_POST[cifProveidor]\", imagen = \"$_GET[id].jpg\";";
+
+    $query="INSERT INTO Producte (Nom,Codi_de_barres,IVA,Descripcio,Preu,fkcifProveidor, imagen) 
+            VALUES (\"$_POST[Nom]\", \"$_POST[Codi_de_barres]\", \"$_POST[IVA]\", 
+            \"$_POST[Descripcio]\", \"$_POST[Preu]\", \"$_POST[cifProveidor]\", \"$_GET[id].jpg\");";
     echo $query;
     $result = mysqli_query($bbdd, $query);
     if(!$result){

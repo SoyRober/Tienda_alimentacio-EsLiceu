@@ -81,7 +81,7 @@
                     $query = "SELECT cifProveidor, Nom FROM Proveidor;";
                     $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va correctament");
                     while ($Proveidor = mysqli_fetch_assoc($result)) {
-                        $selected = ($Proveidor['cifProveidor'] == $fkcidProveidor) ? 'selected' : '';
+                        $selected = ($Proveidor['cifProveidor'] == $fkcifProveidor) ? 'selected' : '';
                         echo "<option $selected value = \"$Proveidor[cifProveidor]\">$Proveidor[Nom]</option>";
                     }
                     ?>
@@ -94,9 +94,9 @@
                 <input type="file" accept="image/jpeg, image/jpg" name="imgProducte" id="producte"/>
                 <p>Imatge Actual</p>
                 <?php
-                if($imagen){
-                    echo "<img width=\"30px\" src=\"img/productes/$imagen\"/>";
-                }   
+                    if($imagen){
+                        echo "<img width=\"30px\" src=\"img/productes/$imagen\"/>";
+                    }
                 ?>
             </div>
             </div>

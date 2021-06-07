@@ -46,8 +46,6 @@
                                     <td> $row[Preu] </td>
                                     <td> $row[fkidVenta] </td>
                                     <td> $row[fkidProducte] </td>
-                                    <td> 
-                                    </td>
                                 </tr>"
                     ?>
                 </tbody>        
