@@ -3,8 +3,9 @@
 <?php require "includes/head.php";?>
     <body>
         <?php require "includes/header.php";?>
-        <h2> Index </h2>
-        <h9>Bon dia </h9>
-        <p> Aquesta pàgina es per poder-ne mourer-te per la resta de pàgines </p>
     </body>
+    <img src="img/mercadona_pasillo_1.jpg" width="500" height="500">
+    <img src="img/mercadona_pasillo_2.jpg" width="500" height="500">
+    <img src="img/mercadona_pasillo_3.jpg" width="500" height="500">
+    <?php require "includes/footer.php";?>
 </html>

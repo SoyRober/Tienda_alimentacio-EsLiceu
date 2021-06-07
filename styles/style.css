@@ -1,11 +1,223 @@
-td{
-    color:#000;
-    border:2px solid #A00;
-    padding:5px 2px 5px 1px;
-    margin:5px;
-    background-color:#31FCAC;}
-a{
-    color:rgb(0, 100, 150);
-    padding:5px 5px 5px 5px;
-    text-decoration:"none";
+tr {
+    color:white;
+    background-color:#008f39;
+    border:5px solid #545353;
 }
+
+body {
+    background-image: url("../img/fondo.jpg");
+}
+
+td {
+    padding: 5px;
+}
+
+table {
+    position: relative;
+    top:50px;
+}
+
+button.enviar {
+    
+}
+
+table a {
+    color:#fff;
+    text-decoration: none;
+}
+
+select {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+select.select {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    position: relative;
+    left: 10px;
+    top:10px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #b6d6ac;
+    border-radius: 6px;
+    border: 2px solid #00cf0a;
+}
+
+button.filtrar {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    position: relative;
+    left: 15px;
+    top:10px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #b6d6ac;
+    border-radius: 6px;
+    border: 2px solid #00cf0a;
+}
+
+a.reinici_filtre {
+    text-decoration: none;
+    z-index: 3;
+    color: black;
+    padding: 10px;
+    position: relative;
+    left: 105px;
+    top:30px;
+    font-weight: 600;
+    font-size: 14px;
+    background-color: #b6d6ac;
+    border-radius: 6px;
+    border: 2px solid #00cf0a;
+}
+
+body h1 {
+    color: white;
+    display: inline-block;
+    width: 100%;
+    background-color: green;
+    margin: auto;
+    text-align:center;
+    padding: 20px;
+}
+
+footer p.insta {
+    text-align: center;
+}
+
+footer p.copy {
+    text-align: center;
+}
+
+footer p {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+footer p a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+footer {
+    float: left;
+    margin-top: 100px;
+    width: 99%;
+    background-color: green;
+    color: white;
+}
+header {
+    
+    display: inline-block;
+    width: 98%;
+}
+
+button.reset {
+    padding-bottom: 10px;
+}
+
+table {
+    margin: 0 auto;
+}
+
+thead th {
+    background-color: #008f39;
+}
+
+#menu ul {
+    z-index: 2;
+    list-style:none;
+    margin:10;
+    padding:0;
+}
+   
+#menu ul li {
+    background-color:#008f39;
+    z-index: 2;
+}
+
+#menu ul a {
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+    font-family:"Arial";
+    text-transform:uppercase;
+    letter-spacing:1px;
+    z-index: 2;
+}
+
+#menu ul li {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+    z-index: 2;
+}
+
+#menu ul li:hover {
+    background:#4f9453;
+    z-index: 2;
+}
+
+#menu ul ul {
+    z-index: 2;
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+    z-index: 2;
+}
+   
+#menu ul ul li {
+    float:none;
+    width:150px
+}
+   
+#menu ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+    z-index: 2;
+}
+
+#menu ul li:hover > ul {
+    display:block;
+    z-index: 2;
+}
+
+html {
+    font-family: arial;
+}
+ 
+h1.img span{
+    position: relative;
+}
+
+h1.img span::before{
+    content: " ";
+    width: 90px;
+    height: 90px;
+    background-image: url('../img/cesta_comida.png');
+    background-repeat: none;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: -103px;
+    top: -26px;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 40%;
+} 
