@@ -51,6 +51,7 @@ if (isset($_GET['Producte']) && (intval($_GET['Producte']) > 0)) {
             <tr>
                 <th> Producte </th>
                 <th> Al·lergògen </th>
+                <th> Opcions </th>
             </tr>
         </thead>
         <tbody>
@@ -72,6 +73,9 @@ if (isset($_GET['Producte']) && (intval($_GET['Producte']) > 0)) {
                 echo "<tr>
                                 <td> $row[Nom] </td>
                                 <td> $row[Nom_allergogen] </td>
+                                <td>
+                                    <button class=\"llista\" onclick=\"window.location.href='delete_api_pro-al.php?fkidProducte=$row[fkidProducte] '\" class=\"llista\"> Elimina </button>
+                                </td>
                             </tr>";
             }
             ?>

@@ -50,15 +50,9 @@
             </div>
             <div>    
                 <label>
-                    Població  
-                </label>   
-                <input class="inserts" type="number" max="99999999" name="Poblacio" value="<?=$poblacio?>">
-            </div>
-            <div>    
-                <label>
                     CP  
                 </label>   
-                <input class="inserts" type="text" maxlenght="6" required name="CP" value="<?=$cp?>">
+                <input class="inserts" type="text" maxlenght="7" minlength="7" required name="CP" value="<?=$cp?>">
             </div>
             <div>    
                 <label>
@@ -76,7 +70,7 @@
                 <label>
                     CIF del proveidor
                 </label>    
-                <input class="inserts" type="text" required maxlenght="9" minlenght="9" name="cifProveidor" readonly value="<?=$cifProveidor?>">
+                <input class="inserts" type="text" required maxlenght="9" minlenght="9" name="cifProveidor" value="<?=$cifProveidor?>">
             </div>
             <div>
                 <label>

@@ -49,7 +49,7 @@
                 <label>
                     Codi de barres
                 </label>
-                <input class="inserts" type="text" maxlength="255" required minlength="5" name="Codi_de_barres" value="<?=$codi_de_barres?>">
+                <input class="inserts" type="text" maxlength="13" required minlength="13" name="Codi_de_barres" value="<?=$codi_de_barres?>">
             </div>
             <div>
                 <label>

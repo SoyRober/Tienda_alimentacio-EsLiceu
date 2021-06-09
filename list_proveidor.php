@@ -17,11 +17,10 @@
                 </select>
                 <button class="filtrar" type = "submit"> Filtrar </button>
             </form>
-            <a class="reinici_filtre" href=list_producte.php> Reiniciar filtre </a>
+            <a class="reinici_filtre" href=list_proveidor.php> Reiniciar filtre </a>
             <table>
                 <thead>
                     <tr>
-                        <th> Població </th>
                         <th> Nom </th>
                         <th> Adreca </th>
                         <th> CP </th>
@@ -41,7 +40,6 @@
                         $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo    "<tr>
-                                        <td> $row[Poblacio] </td>
                                         <td> $row[Nom] </td>
                                         <td> $row[Adreca] </td>
                                         <td> $row[CP] </td>
