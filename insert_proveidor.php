@@ -40,52 +40,52 @@
                 <label>
                     Nom   
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
+                <input class="inserts" type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
             </div>
             <div>    
                 <label>
                      Telèfon
                 </label>
-                <input type="text" maxlength="16" required minlength="16" name="Telefon" value="<?=$telefon?>">
+                <input class="inserts" type="text" maxlength="16" required minlength="16" name="Telefon" value="<?=$telefon?>">
             </div>
             <div>    
                 <label>
                     Població  
                 </label>   
-                <input type="number" max="99999999" name="Poblacio" value="<?=$poblacio?>">
+                <input class="inserts" type="number" max="99999999" name="Poblacio" value="<?=$poblacio?>">
             </div>
             <div>    
                 <label>
                     CP  
                 </label>   
-                <input type="text" maxlenght="6" required name="CP" value="<?=$cp?>">
+                <input class="inserts" type="text" maxlenght="6" required name="CP" value="<?=$cp?>">
             </div>
             <div>    
                 <label>
                     Pais
                 </label>   
-                <input type="text" maxlenght="150" required minlenght="5" name="Pais" value="<?=$pais?>">
+                <input class="inserts" type="text" maxlenght="150" required minlenght="5" name="Pais" value="<?=$pais?>">
             </div>
             <div>    
                 <label>
                     Adreça
                 </label>   
-                <input type="text" maxlenght="150" required minlenght="5" name="Adreca" value="<?=$adreca?>">
+                <input class="inserts" type="text" maxlenght="150" required minlenght="5" name="Adreca" value="<?=$adreca?>">
             </div>
             <div>
                 <label>
                     CIF del proveidor
                 </label>    
-                <input type="text" required maxlenght="9" minlenght="9" name="cifProveidor" readonly value="<?=$cifProveidor?>">
+                <input class="inserts" type="text" required maxlenght="9" minlenght="9" name="cifProveidor" readonly value="<?=$cifProveidor?>">
             </div>
             <div>
                 <label>
                     Resetear
                 </label>
-                <input type="reset">
+                <input class="inserts" type="reset">
             </div>
             <div>
-                <button type="submit">
+                <button class="inserts" type="submit">
                     Enviar
                 </button>
             </div>    

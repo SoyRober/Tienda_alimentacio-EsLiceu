@@ -11,8 +11,8 @@
                 <label>
                     Producte
                 </label>
-                <select name="fkidProducte">
-                    <option value=""></option>
+                <select class="select" name="fkidProducte">
+                    <option value=""> Selecciona un producte </option>
                     <?php
                         $query = "SELECT idProducte, Nom FROM Producte;";
                         $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va correctament");
@@ -27,8 +27,8 @@
                 <label>
                     Allergogen
                 </label>
-                <select name="fkidAllergogen">
-                    <option value=""></option>
+                <select class="select" name="fkidAllergogen">
+                    <option value=""> Selecciona una al·lèrgia </option>
                     <?php
                         $query = "SELECT idAllergogen, Nom FROM Allergogen;";
                         $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va correctament");
@@ -43,10 +43,10 @@
                     <label>
                         Resetear
                     </label>
-                    <input type="reset">
+                    <input class="inserts" type="reset">
                 </div>
                 <div>
-                    <button class="enviar" type="submit">
+                    <button class="inserts" class="enviar" type="submit">
                         Enviar
                     </button>
                 </div>
