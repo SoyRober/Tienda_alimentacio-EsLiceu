@@ -8,10 +8,10 @@
             <select name="Client"> 
             <option value=""> </option>
             <?php
-                        $query = "SELECT Nom, dniClient FROM Client ORDER BY Nom;";
+                        $query = "SELECT Pais FROM Client ORDER BY Pais;";
                         $result = mysqli_query ($bbdd, $query);
                             while ($row = mysqli_fetch_assoc ($result)) {
-                                echo "<option value = \"$row[dni]\"> $row[Nom] </option>";
+                                echo "<option value = \"$row[Pais]\"> $row[Pais] </option>";
                             }
                     ?>
             </select>
@@ -38,13 +38,13 @@
                 <tbody>
                 <?php 
                 $where = "";
-                if (isset($_GET['Targeta'])) {
-                    $where = " WHERE tr.idTargeta = \"$_GET[Targeta]\" ";
+                if (isset($_GET['Pais'])) {
+                    $where = " WHERE cl.Pais = \"$_GET[Pais]\" ";
                 }
-                $query = "SELECT cl.*, tr.idTargeta  AS idTargeta FROM Client
-                 AS cl INNER JOIN Targeta AS tr
+                $query = "SELECT cl.*, tr.idTargeta AS Targeta FROM Client
+                        AS cl INNER JOIN Targeta AS tr
                         ON (cl.fkidTargeta = tr.idTargeta)
-                 $where ORDER BY Nom;";  
+                 $where ORDER BY Nom;";  //Preguntar a Tomeu
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                     echo    "<tr>

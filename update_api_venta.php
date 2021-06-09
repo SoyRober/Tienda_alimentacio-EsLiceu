@@ -6,7 +6,7 @@
     echo "<p> fkdniClient:".$_POST["fkdniClient"]."</p>";
     echo "<p> fkidTargeta:".$_POST["fkidTargeta"]."</p>";
     $query="UPDATE Venta
-    SET  Nom = \"$_POST[Nom]\", Nombre = \"$_POST[Nombre]\", fkdniClient = \"$_POST[fkdniClient]\", fkidTargeta = \"$_POST[fkidTargeta]\" WHERE idVenta =\"$_GET[idVenta];";
+    SET  Nom = \"$_POST[Nom]\", Nombre = \"$_POST[Nombre]\", fkdniClient = \"$_POST[fkdniClient]\", fkidTargeta = \"$_POST[fkidTargeta]\" WHERE id =\"$_GET[idVenta];";
     echo $query;
     $result=mysqli_query($bbdd, $query);
     if(!$result){

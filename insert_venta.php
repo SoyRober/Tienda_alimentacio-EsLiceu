@@ -8,18 +8,19 @@
         <p> Parrafo con tremenda personalidad </p>
         <?php
         $idVenta = '';
-        $Nombre = '';
-        $fkdniClient = 0;
-        $fkcidTargeta = 0;
+        $nombre = '';
+        $fkdniClient = '';
+        $fkcidTargeta = '';
         if (isset($_GET['idVenta'])) {
             $query = "SELECT * FROM Venta WHERE idVenta = \"$_GET[idVenta]\";";
             $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
-            $Venta = mysqli_fetch_assoc($result);
-            if ($Venta["idVenta"]) {
-                $idVenta = $Venta["idVenta"];
-                $Nombre = $Venta["Nombre"];
-                $fkdniClient = $Venta["fkdniClient"];
-                $fkidTargeta = $Venta["fkidTargeta"];
+            $venta = mysqli_fetch_assoc($result);
+            if ($venta["idVenta"]) {
+                $idVenta = $venta["idVenta"];
+                $nombre = $venta["Nombre"];
+                //Preguntar Tomeu
+                $fkdniClient = $venta["fkdniClient"];
+                $fkidTargeta = $venta["fkidTargeta"];
             }
         }
        ?>
@@ -29,20 +30,20 @@
                 <label>
                     Nombre
                 </label>
-                <input type="text" maxlength="999" required minlength="1" name="Nombre" value="<?$Nombre?>">
+                <input type="number" max="200" required min="1" name="Nombre" value="<?$nombre?>">
             </div>
             <div>
                 <label>
                     dniClient
                 </label>  
-                <select name="fkdniClient" required>
+                <select name="fkdniClient" value="<?=$fkdniClient?>" required>
                 <option value=""> </option> 
                 <?php
                     $query = "SELECT dniClient, Nom FROM Client;";
                     $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va bé");
-                    while ($Client = mysqli_fetch_assoc($result)) {
-                        $selected = ($Client['idClient'] == $fkdniClient) ? 'selected' : '';
-                        echo "<option $selected value = \"$Client[dniClient]\">$Client[Nom]</option>";
+                    while ($client = mysqli_fetch_assoc($result)) {
+                        $selected = ($client['dniClient'] == $fkdniClient) ? 'selected' : '';
+                        echo "<option $selected value = \"$client[dniClient]\">$client[Nom]</option>";
                     }
                     ?>
                 </select>
@@ -51,7 +52,7 @@
                 <label>
                     idTargeta
                 </label>
-                <select name="fkidTargeta" required>
+                <select name="fkidTargeta" value="<?=$fkidtargeta?>" required>
                 <option value=""> </option>  
                 <?php
                     $query = "SELECT idTargeta, Nom FROM Targeta;";

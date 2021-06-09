@@ -8,21 +8,8 @@
             <h2> Listar  targeta</h2>
             <h6> rubías , cara de sandía </h6>
             <p> Parrafo precioso la verdad </p>
-            <FORM action="list_targeta.php" method="GET">
-            <SELECT NAME="Targeta"> 
-            <?php
-            
-            $query="SELECT * FROM Targeta
-            $where  order by Nom";
-            $result= mysqli_query($bbdd,$query);
-            while ($row = mysqli_fetch_assoc($result))
-
-                echo "<option value=\"($row[idTargeta]\">
-                    $row[Nom]</option>"
-                ?>
-                </select>
-                <button type ="submit"> FILTRAR </button>
-                </form>
+            <form action="list_targeta.php" method="GET">
+            </form>
             <table>
                 <tr>
                     <td> idTargeta </td>
@@ -32,10 +19,6 @@
                     <td> Opcions </td>
                 </tr>   
                 <?php 
-                 $where = "";
-                 if (isset($_GET['idTargeta'])) {
-                     $where = " WHERE idTargeta = \"$_GET[idTargeta]\" ";
-                 }
                     $query = "SELECT * FROM Targeta  ORDER BY idTargeta;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
@@ -45,8 +28,8 @@
                                     <td> $row[Descompte] </td>
                                     <td> $row[Nom] </td>
                                     <td>  
-                                    <button onclick=\"window.location.href='delete_api_venta.php?idVenta=$row[idTargeta] '\"> Elimina </button> |
-                                    <button onclick=\"window.location.href='insert_venta.php?idVenta=$row[idTargeta] '\"> Editar </button> 
+                                    <button onclick=\"window.location.href='delete_api_targeta.php?idTargeta=$row[idTargeta] '\"> Elimina </button> |
+                                    <button onclick=\"window.location.href='insert_targeta.php?idTargeta=$row[idTargeta] '\"> Editar </button> 
                                     </td>                          
                                 </tr>"
                     ?>

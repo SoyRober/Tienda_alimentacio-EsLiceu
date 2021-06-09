@@ -8,23 +8,30 @@
         <p> Parrafo con tremenda personalidad </p>
         <?php
         $idTargeta = '';
-        $Punts = '';
-        $Descompte = '';
-        $Nom = '';
-        $imagen = '';
+        $punts = '';
+        $descompte = '';
+        $nom = '';
         if (isset($_GET['idTargeta'])) {
             $query = "SELECT * FROM Targeta WHERE idTargeta = \"$_GET[idTargeta]\";";
             $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
-            $producte = mysqli_fetch_assoc($result);
-            if ($Targeta["idTargeta"]) {
-                $idTargeta = $Targeta["idTargeta"];
-                $Punts = $Targeta["Punts"];
-                $Descompte = $Targeta["Descompte"];
-                $Nom = $Targeta["Nom"];
-                $imagen = $Targeta["imagen"];
+            $targeta = mysqli_fetch_assoc($result);
+            if ($targeta["idTargeta"]) {
+                $idTargeta = $targeta["idTargeta"];
+                $punts = $targeta["Punts"];
+                $descompte = $targeta["Descompte"];
+                $nom = $targeta["Nom"];
             }
         }
        ?>
+              <div>
+            <?php
+            if ($idTargeta) {
+                echo '<h1> Actualitzant la targeta amb ID: ' . $idTargeta . '</h1>';
+            } else {
+                echo '<h1> Inserta un nou targeta </h1>';
+            }
+            ?>
+        </div>
         <div>
         <form action="<?= ($idTargeta) ? "update_api_targeta.php?id=$idTargeta" : 'insert_api_targeta.php' ?>" method="post" enctype="multipart/form-data">
         </div>    
@@ -32,19 +39,19 @@
                 <label>
                     Nom
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$Nom?>">
+                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
             </div>
             <div>    
                 <label>
                     Descompte  
                 </label>   
-                <input type="number" max="100" required min="1" name="Descompte" value="<?=$Descompte?>">
+                <input type="number" max="100" required min="1" name="Descompte" value="<?=$descompte?>">
             </div>
             <div>    
                 <label>
                     Punts  
                 </label>   
-                <input type="number" max="5000" required min="1" name="Punts"value="<?=$Punts?>" >
+                <input type="number" max="5000" required min="1" name="Punts"value="<?=$punts?>" >
             </div>
             <div>
                 <label>
