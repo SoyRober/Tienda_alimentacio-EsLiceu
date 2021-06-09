@@ -9,6 +9,6 @@
         print(mysqli_connect_error());
 exit();
     }else{
-echo "TOT A SORTIR COM ES ESPERABA!";
+echo "";
     }
 ?>

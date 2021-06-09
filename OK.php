@@ -3,6 +3,6 @@ require "includes/head.php";
 require "includes/header.php";
 ?>
 <body>
-echo "TOT OKI DOKI" 
+echo "TOT OK!" 
 </body>
 

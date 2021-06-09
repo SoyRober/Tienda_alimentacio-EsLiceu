@@ -9,20 +9,19 @@
             <h6> rubías , cara de sandía </h6>
             <p> Parrafo precioso la verdad </p>
             <FORM action="list_targeta.php" method="GET">
-            <SELECT NAME="Targeta">
+            <SELECT NAME="Targeta"> 
             <?php
-            require "includes/header.php";
+            
             $query="SELECT * FROM Targeta
-                           order by Nom";
+            $where  order by Nom";
             $result= mysqli_query($bbdd,$query);
             while ($row = mysqli_fetch_assoc($result))
 
-                echo "<option value=\"($row[id]\">
-                    $row[nom]</option>"
+                echo "<option value=\"($row[idTargeta]\">
+                    $row[Nom]</option>"
                 ?>
                 </select>
-                <buttom type ="submit"> FILTRAR 
-                </buttom>
+                <button type ="submit"> FILTRAR </button>
                 </form>
             <table>
                 <tr>
@@ -33,7 +32,11 @@
                     <td> Opcions </td>
                 </tr>   
                 <?php 
-                    $query = "SELECT * FROM Targeta ORDER BY idTargeta;";
+                 $where = "";
+                 if (isset($_GET['idTargeta'])) {
+                     $where = " WHERE idTargeta = \"$_GET[idTargeta]\" ";
+                 }
+                    $query = "SELECT * FROM Targeta  ORDER BY idTargeta;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
@@ -41,10 +44,10 @@
                                     <td> $row[Punts] </td>
                                     <td> $row[Descompte] </td>
                                     <td> $row[Nom] </td>
-                                    <td> 
-                                    </td>
-                                    <a href=\"delete_api_targeta.php?idTargeta=$row[idTargeta]\"> Eliminar </a> |
-
+                                    <td>  
+                                    <button onclick=\"window.location.href='delete_api_venta.php?idVenta=$row[idTargeta] '\"> Elimina </button> |
+                                    <button onclick=\"window.location.href='insert_venta.php?idVenta=$row[idTargeta] '\"> Editar </button> 
+                                    </td>                          
                                 </tr>"
                     ?>
                 </tbody>        

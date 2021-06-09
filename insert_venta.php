@@ -6,41 +6,77 @@
         <h2> Insertar Venta </h2>
         <h9> Carita , cara </h9>
         <p> Parrafo con tremenda personalidad </p>
-        <form action="insert_api_venta.php" method="post">
-            <div>
-                <label>
-                    Nom
-                </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom">
-            </div>
-            <div>
+        <?php
+        $idVenta = '';
+        $Nombre = '';
+        $fkdniClient = 0;
+        $fkcidTargeta = 0;
+        if (isset($_GET['idVenta'])) {
+            $query = "SELECT * FROM Venta WHERE idVenta = \"$_GET[idVenta]\";";
+            $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
+            $Venta = mysqli_fetch_assoc($result);
+            if ($Venta["idVenta"]) {
+                $idVenta = $Venta["idVenta"];
+                $Nombre = $Venta["Nombre"];
+                $fkdniClient = $Venta["fkdniClient"];
+                $fkidTargeta = $Venta["fkidTargeta"];
+            }
+        }
+       ?>
+
+<form action="<?= ($idVenta) ? "update_api_venta.php?id=$idVenta" : 'insert_api_venta.php' ?>" method="post" enctype="multipart/form-data">
+
                 <label>
                     Nombre
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom">
+                <input type="text" maxlength="999" required minlength="1" name="Nombre" value="<?$Nombre?>">
             </div>
             <div>
                 <label>
-                    fkdniClient
-                </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom">
+                    dniClient
+                </label>  
+                <select name="fkdniClient" required>
+                <option value=""> </option> 
+                <?php
+                    $query = "SELECT dniClient, Nom FROM Client;";
+                    $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va bé");
+                    while ($Client = mysqli_fetch_assoc($result)) {
+                        $selected = ($Client['idClient'] == $fkdniClient) ? 'selected' : '';
+                        echo "<option $selected value = \"$Client[dniClient]\">$Client[Nom]</option>";
+                    }
+                    ?>
+                </select>
             </div>
             <div>
                 <label>
-                    fkidTargeta
+                    idTargeta
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom">
+                <select name="fkidTargeta" required>
+                <option value=""> </option>  
+                <?php
+                    $query = "SELECT idTargeta, Nom FROM Targeta;";
+                    $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va bé");
+                    while ($Targeta = mysqli_fetch_assoc($result)) {
+                        $selected = ($Targeta['idTargeta'] == $fkidTargeta) ? 'selected' : '';
+                        echo "<option $selected value = \"$Targeta[idTargeta]\">$Targeta[Nom]</option>";
+                    }
+                    ?>
+                </select>
             </div>
+            <div>
                 <label>
                     Resetear
                 </label>
                 <input type="reset">
             </div>
             <div>
-                <button type="submit">
+            <label>
+            <button type="submit">
                     Enviar
                 </button>
-            </div>    
+            </label>
+            </div>
+              
         </form>
     </body>
 </html> 
