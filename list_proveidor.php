@@ -6,9 +6,9 @@
             <h2> Llista de tots els proveidors </h2>
             <form action = "list_proveidor.php" method = "GET" >
                 <select class="select" name="Pais">
-                    <option value="">  </option>
+                    <option value=""> Selecciona un país </option>
                     <?php
-                        $query = "SELECT  DISTINCT Pais FROM Proveidor ORDER BY Nom;";
+                        $query = "SELECT  DISTINCT Pais FROM Proveidor ORDER BY Pais;";
                         $result = mysqli_query($bbdd, $query);
                             while ($row = mysqli_fetch_assoc ($result)) {
                                 echo "<option value = \"$row[Pais]\"> $row[Pais] </option>";
@@ -17,11 +17,10 @@
                 </select>
                 <button class="filtrar" type = "submit"> Filtrar </button>
             </form>
-            <a class="reinici_filtre" href=list_producte.php> Reiniciar filtre </a>
+            <a class="reinici_filtre" href=list_proveidor.php> Reiniciar filtre </a>
             <table>
                 <thead>
                     <tr>
-                        <th> Població </th>
                         <th> Nom </th>
                         <th> Adreca </th>
                         <th> CP </th>
@@ -41,7 +40,6 @@
                         $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo    "<tr>
-                                        <td> $row[Poblacio] </td>
                                         <td> $row[Nom] </td>
                                         <td> $row[Adreca] </td>
                                         <td> $row[CP] </td>
@@ -49,9 +47,9 @@
                                         <td> $row[cifProveidor] </td>
                                         <td> $row[Telefon] </td>
                                         <td> 
-                                        <button onclick=\"window.location.href='delete_api_proveidor.php?cifProveidor=$row[cifProveidor] '\"> Elimina </button> |
-                                        <button onclick=\"window.location.href='insert_proveidor.php?cifProveidor=$row[cifProveidor] '\"> Editar </button>
-                                        </td>
+                                        <button class=\"llista\" onclick=\"window.location.href='delete_api_proveidor.php?cifProveidor=$row[cifProveidor] '\" class=\"llista\"> Elimina </button> |
+                                        <button class=\"llista\" onclick=\"window.location.href='insert_proveidor.php?cifProveidor=$row[cifProveidor] '\"> Editar </button>
+                                        </td> 
                                     </tr>";
                     }
                     ?>

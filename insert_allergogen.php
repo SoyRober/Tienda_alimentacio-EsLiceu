@@ -36,15 +36,15 @@
                 <label>
                     Nom   
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
+                <input class="inserts" type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
             <div>
                 <label>
                     Resetear
                 </label>
-                <input type="reset">
+                <input class="inserts" type="reset">
             </div>
             <div>
-                <button type="submit">
+                <button class="inserts" type="submit">
                     Enviar
                 </button>
             </div>    
