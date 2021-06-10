@@ -1,4 +1,4 @@
-tr {
+tr.list {
     color:white;
     background-color:#008f39;
     border:5px solid #545353;
@@ -15,6 +15,7 @@ td {
 table {
     position: relative;
     top:50px;
+    margin: 0 auto;
 }
 
 button.inserts {
@@ -144,6 +145,38 @@ footer p.insta {
     text-align: center;
 }
 
+button[type="submit" i] {
+    padding: 3px 2px;
+    text-align: left;
+}
+
+h2 {
+    text-align: center;
+    padding-right: 500px;
+}
+
+input[type="reset" i] {
+    padding: 3px 2px;
+    text-align: left;
+}
+
+input[type="number" i] {
+    padding: 1px 2px;
+    text-align: left;
+}
+
+input[type="text" i] {
+    padding: 1px 2px;
+    text-align: left;
+}
+
+.tdinsert td {
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
 footer p.copy {
     text-align: center;
 }
@@ -160,24 +193,29 @@ footer p a {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
     float: left;
     margin-top: 100px;
     width: 99%;
     background-color: green;
     color: white;
 }
-header {
-    
-    display: inline-block;
-    width: 98%;
+
+nav {
+    display: block;
+    width: 100%;
+
 }
 
-table {
-    margin: 0 auto;
+header {
+    display: inline-block;
+    
 }
 
 thead th {
     background-color: #008f39;
+    color: white;
 }
 
 #menu ul {

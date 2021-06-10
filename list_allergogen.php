@@ -19,7 +19,7 @@
                     $query = "SELECT * FROM Allergogen ORDER BY idAllergogen;";
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
-                        echo    "<tr>
+                        echo    "<tr class=\"list\">
                                     <td> $row[idAllergogen] </td>
                                     <td> $row[Nom] </td>
                                     <td> 
