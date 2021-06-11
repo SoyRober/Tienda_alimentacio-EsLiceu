@@ -18,7 +18,6 @@
             if ($venta["idVenta"]) {
                 $idVenta = $venta["idVenta"];
                 $nombre = $venta["Nombre"];
-                //Preguntar Tomeu
                 $fkdniClient = $venta["fkdniClient"];
                 $fkidTargeta = $venta["fkidTargeta"];
             }
@@ -26,13 +25,19 @@
        ?>
 
 <form action="<?= ($idVenta) ? "update_api_venta.php?id=$idVenta" : 'insert_api_venta.php' ?>" method="post" enctype="multipart/form-data">
-
+    <table>
+          <tr>
+             <td>     
                 <label>
-                    Nombre
+                    Nombre 
                 </label>
-                <input type="number" max="200" required min="1" name="Nombre" value="<?$nombre?>">
-            </div>
+                <input class="inserts" type="number" step="1" max="200" required min="1" name="Nombre" value="<?=$nombre?>"/>
+            </td>
+          </tr>
+          <tr>
+          <td>
             <div>
+            
                 <label>
                     dniClient
                 </label>  
@@ -48,8 +53,12 @@
                     ?>
                 </select>
             </div>
+            </tr>
+            </td>
             <div>
-                <label>
+            <tr>
+                <td>
+                    <label>
                     idTargeta
                 </label>
                 <select name="fkidTargeta" value="<?=$fkidtargeta?>" required>
@@ -63,21 +72,30 @@
                     }
                     ?>
                 </select>
+            </tr>
+                </td>
             </div>
-            <div>
+            <tr>
+                <td class="right">
+                <div>
                 <label>
                     Resetear
                 </label>
-                <input type="reset">
+                <input class="inserts" type="reset">
             </div>
-            <div>
-            <label>
-            <button type="submit">
+            </td>
+        </tr>
+        <tr>
+        <td class="right">
+                <div>
+            <button class="inserts" type="submit">
                     Enviar
                 </button>
             </label>
             </div>
-              
+        </tr>
+            </td>
+    </table>
         </form>
     </body>
 </html> 

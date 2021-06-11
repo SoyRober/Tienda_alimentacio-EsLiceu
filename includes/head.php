@@ -1,6 +1,6 @@
 <?php require "includes/mysql.php";?>
 <head>
-    <title> Tenda_de_Rober_Javi </title>
+    <title> Constas </title>
         <meta charset="UTF-8">
         <meta name="title" content="Títol de la WEB">
         <meta name="description" content="Descripció de la WEB">

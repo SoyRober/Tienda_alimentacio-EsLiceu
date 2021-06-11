@@ -13,9 +13,10 @@
     WHERE idProducte=\"$_GET[id]\";";
     echo $query;
     $result = mysqli_query($bbdd, $query);
-    if(!$result){
-        echo "error query";
-        mysqli_error($bbdd);
-        print (mysqli_error($bbdd));
+    if (!$result) {
+        $error = (mysqli_error($bbdd));
+        header('Location: error.php?error=' . $error);
+    } else {
+        header('Location: OK.php');
     }
 ?>

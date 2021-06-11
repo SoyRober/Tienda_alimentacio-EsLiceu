@@ -14,7 +14,6 @@
         $adreca= '';
         $fkidTargeta = '';
         $email = '';
-        $imagen = '';
         if (isset($_GET['dniClient'])) {
             $query = "SELECT * FROM Client WHERE dniClient= \"$_GET[dniClient]\";";
             $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
@@ -29,7 +28,7 @@
                 $adreca = $client["Adreca"];
                 $fkidTargeta = $client["fkidTargeta"];
                 $email = $client["Email"];
-                $imagen = $client["imagen"];
+               
             }
         
         }
@@ -44,52 +43,81 @@
             ?>
         </div>
 <form action="<?= ($dniClient) ? "update_api_client.php?dni=$dniClient" : 'insert_api_client.php' ?>" method="post" enctype="multipart/form-data">
-          
+         <table>
+            <tr>
+                <td>
             <div>   
             <label>
                     dniClient
                 </label>   
-                <input type="text" max="40" required name="dniClient" value="<?=$dniClient?>">
-            </div> 
+                <input class="inserts" type="text" max="40" required name="dniClient" value="<?=$dniClient?>">
+            </div>
+            </tr>
+                </td>
+            <tr>
+                <td>    
             <div>    
                 <label>
                     Pais   
                 </label>   
-                <input type="text" max="40" required min="20" name="Pais" value="<?=$pais?>">
+                <input class="inserts" type="text" max="40" required min="20" name="Pais" value="<?=$pais?>">
             </div>
+            </tr>    
+                </td>
+
+            <tr>
+                <td>    
             <div>
                 
                 <label>
                     Nom
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>"> 
+                <input class="inserts" type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>"> 
             </div>
+            </tr>    
+                </td>
+            <tr>
+                <td>
             <div>    
                 <label>
                   CP    
                 </label>   
-                <input type="text" max="100" required name="CP" value="<?=$cp?>">
+                <input class="inserts" type="text" max="100" required name="CP" value="<?=$cp?>">
             </div>
+            </tr>    
+                </td>
+            <tr>
+                <td>
             <div>
             <label>
                     Telèfon   
                 </label>   
-                <input type="text" max="255" required min="20" name="Telefon" value="<?=$telefon?>">
+                <input class="inserts" type="text" max="255" required min="20" name="Telefon" value="<?=$telefon?>">
             </div>
+            </tr>
+                </td>
+            <tr>
+                <td>
             <div>
             <label>
                     Provincia
                 </label>   
-                <input type="text" max="40" required min="20" name="Provincia" value="<?=$provincia?>">
-            
-            </div>  
+                <input class="inserts" type="text" max="40" required min="20" name="Provincia" value="<?=$provincia?>">
+            </div>
+            </tr>    
+                </td>  
+            <tr>
+                <td>
             <div>
             <label>
                     Adreça
                 </label>   
-                <input type="text" max="40" required min="20" name="Adreca" value="<?=$adreca?>">
+                <input class="inserts" type="text" max="40" required min="20" name="Adreca" value="<?=$adreca?>">
             </div>
-
+            </tr>
+                </td>
+            <tr>
+                <td>
             <div>
                 <label>
                     Targeta
@@ -105,25 +133,40 @@
                     }
                     ?>
                      </select>
+                </tr>
+                    </td>
+            <tr>
+                <td>
             <div>
+
+            <label>
             Mete tu email
             </label>
-<input type="email"  name="Email" value="<?=$email?>"> </div>
-                <div>
-                    <input type="file" accept="image/jpeg, image/jpg" name="imgcliente" id="client">
-                </div>
+<input class="inserts" type="email"  name="Email" value="<?=$email?>"> </div>
+            </div>
+            </tr>
+            </td>
+            <tr>
+                    <td class="right">
                 <div>
                 <label>
                     Resetear
                 </label>
-                <input type="reset">
+                <input type="reset" class="inserts">
             </div>
+            </tr>    
+            </td>  
+            <tr>
+                    <td class="right">
             <div>
-                <button type="submit">
+                <button type="submit" class="inserts">
                     Enviar
                 </button>
-                </div>          
-            </form>
+                </div>  
+            </tr>    
+            </td>   
+         </table>            
+        </form>
         </body>
     </html> 
 

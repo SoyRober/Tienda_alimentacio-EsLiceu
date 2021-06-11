@@ -34,37 +34,49 @@
         </div>
         <div>
         <form action="<?= ($idTargeta) ? "update_api_targeta.php?id=$idTargeta" : 'insert_api_targeta.php' ?>" method="post" enctype="multipart/form-data">
-        </div>    
+        </div>
+        <table>
+               <tr>
+                  <td>    
             <div>
                 <label>
                     Nom
                 </label>
-                <input type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
+                <input class="inserts" type="text" maxlength="255" required minlength="2" name="Nom" value="<?=$nom?>">
+            
             </div>
             <div>    
                 <label>
                     Descompte  
                 </label>   
-                <input type="number" max="100" required min="1" name="Descompte" value="<?=$descompte?>">
+                <input class="inserts" type="number" max="100" required min="4" name="Descompte" value="<?=$descompte?>">
             </div>
             <div>    
                 <label>
                     Punts  
                 </label>   
-                <input type="number" max="5000" required min="1" name="Punts"value="<?=$punts?>" >
+                <input class="inserts" type="number" max="5000" required min="100" name="Punts"value="<?=$punts?>" >
             </div>
+            <tr>
+               <td class="right">
             <div>
                 <label>
                     Resetear
                 </label>
-                <input type="reset">
+                <input type="reset" class="inserts">
             </div>
+            </td>
+          </tr> 
+            <tr>
+            <td class="right">
             <div>
-                <button type="submit">
+                <button class="inserts" type="submit">
                     Enviar
                 </button>
             </div> 
-               
+            </td>
+          </tr> 
+        </table>
         </form>
     </body>
 </html>

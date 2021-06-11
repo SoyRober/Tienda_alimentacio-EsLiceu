@@ -8,15 +8,16 @@
             <h2> Llistar els productes i vendes</h2>
             <h6> rubías , cara de sandía </h6>
             <p> Parrafo precioso la verdad </p>
-            <FORM action="list_producte-venta.php" method="GET">
+            <form action="list_producte-venta.php" method="GET">
+               
                 </form>
-            <table>
+            <table class="list">
             <thead>
                 <tr>
-                    <td> idPro_Ven </td>
-                    <td> Quantitat </td>
-                    <td> Preu </td>
-                    <td> Opcions </td>
+                <th class="list"> idPro_Ven </th>
+                <th class="list"> Quantitat </th>
+                <th class="list"> Preu </th>
+                <th class="list"> Opcions </th>
                 </tr>
                 </thead> 
                 <tbody>  
@@ -29,11 +30,11 @@
                     $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
-                                    <td> $row[idPro_Ven] </td>
-                                    <td> $row[Quantitat] </td>
-                                    <td> $row[Preu] </td>
-                                    <td> 
-                                    <button onclick=\"window.location.href='delete_api_pro_venta.php?idPro_Ven=$row[idPro_Ven] '\"> Elimina </button> </td>
+                        <td class=\"list\"> $row[idPro_Ven] </td>
+                        <td class=\"list\"> $row[Quantitat] </td>
+                        <td class=\"list\"> $row[Preu] </td>
+                        <td class=\"list\"> 
+                                    <button class=\"llista\" onclick=\"window.location.href='delete_api_pro_venta.php?idPro_Ven=$row[idPro_Ven] '\"> Elimina </button> </td>
                                 </tr>"
                     ?>
                 </tbody>        

@@ -9,7 +9,7 @@
             <h4> Ventes </h4> 
             <p> Parrafo precioso la verdad </p>
             <form action = "list_venta.php" method = "GET" >
-            <select name="Client"> 
+            <select class="select" name="Client"> 
             <option value=""> </option>
             <?php
             
@@ -21,16 +21,17 @@
             }
                 ?>
             </select>
-            <button type ="submit"> FILTRAR 
+            <button class="filtrar" type ="submit"> FILTRAR 
                 </button>
             </form>
-            <table>
+            <a class="reinici_filtre" href=list_venta.php> Reiniciar filtre </a>
+            <table class="list">
                 <thead>
                     <tr>
-                    <td> idVenta </td>   
-                    <td> Nombre </td>
-                    <td> dniClient </td>
-                    <td> Opcions </td>
+                    <th class="list"> idVenta </th>   
+                    <th class="list">Nombre </th>
+                    <th class="list"> dniClient </th>
+                    <th class="list"> Opcions </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,12 +49,12 @@
                     while ($row=mysqli_fetch_assoc($result))
                     echo    
                        "<tr>            
-                        <td> $row[idVenta] </td>
-                        <td> $row[Nombre] </td>
-                        <td> $row[fkdniClient] </td>
-                        <td> 
-                        <button onclick=\"window.location.href='delete_api_venta.php?idVenta=$row[idVenta] '\"> Elimina </button> |
-                        <button onclick=\"window.location.href='insert_venta.php?idVenta=$row[idVenta] '\"> Editar </button> 
+                       <td class=\"list\"> $row[idVenta] </td>
+                       <td class=\"list\"> $row[Nombre] </td>
+                       <td class=\"list\"> $row[fkdniClient] </td>
+                       <td class=\"list\">
+                        <button class=\"llista\" onclick=\"window.location.href='delete_api_venta.php?idVenta=$row[idVenta] '\"> Elimina </button> |
+                        <button class=\"llista\" onclick=\"window.location.href='insert_venta.php?idVenta=$row[idVenta] '\"> Editar </button> 
                         </td>
                         </tr>"
                     ?>

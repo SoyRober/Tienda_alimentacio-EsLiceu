@@ -31,29 +31,48 @@
        ?>
 
 <form action="<?= ($idPro_Ven) ? "update_api_producte-venta.php?id=$idPro_Ven" : 'insert_api_producte-venta.php' ?>" method="post" enctype="multipart/form-data">
+            <table>
+            <tr>
+                <td>
+
             <div>
             <label>
                     Quantitat
                 </label>
-                <input type="text" maxlength="999" required minlength="1" name="Quantitat" value="<?$quantitat?>">
+                <input class="inserts" type="text" maxlength="999" required minlength="1" name="Quantitat" value="<?$quantitat?>">
             </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
             <div>
                 <label>
                     Preu
                 </label>
-                <input type="number" required min="0,01" name="Preu" step="0.01" value="<?=$preu?>">
+                <input class="inserts" type="number" required min="0,01" name="Preu" step="0.01" value="<?=$preu?>">
             </div>
+                </tr>
+                    </td>
+            <tr>
+                <td class="right">
             <div>
                 <label>
                     Resetear
                 </label>
-                <input type="reset">
+                <input class="inserts" type="reset">
             </div>
+            </td>
+            </tr>    
+            <tr>
+            <td class="right"> 
             <div>
-                <button input type="submit">
+                <button class="inserts" input type="submit">
                     Enviar
                 </button>
             </div>
+                </td>
+            </tr>
+            </table>
         </form>
     </body>
 </html> 

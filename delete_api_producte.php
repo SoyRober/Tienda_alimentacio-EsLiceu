@@ -2,9 +2,11 @@
     require "includes/mysql.php";
     $query="DELETE FROM Producte WHERE idProducte=\"$_GET[idProducte]\";";
     $result=mysqli_query($bbdd,$query);
-        if($result){
-            echo "S'ha pogut eliminar aquest producte";
+        if(!$result){
+            $error = (mysqli_error($bbdd));
+            header('Location: error.php?error=' . $error);
         }else{
-            print(mysqli_error($bbdd));
+            header('Location: OK.php');
         }
+        
 ?>
