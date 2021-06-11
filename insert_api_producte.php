@@ -1,4 +1,6 @@
 <?php 
+    require "includes/mysql.php";
+    
     $img = '';
     if($_FILES["imgProducte"]){
         //PUJAM IMATGE
@@ -10,7 +12,7 @@
         }
     }
 
-    $query="INSERT INTO Producte (Nom,Codi_de_barres,IVA,Descripcio,Preu,fkcifProveidor, imagen) 
+    $query="INSERT INTO Producte (Nom,Codi_de_barres,IVA,Descripcio,Preu,fkcifProveidor,imagen) 
             VALUES (\"$_POST[Nom]\", \"$_POST[Codi_de_barres]\", \"$_POST[IVA]\", 
             \"$_POST[Descripcio]\", \"$_POST[Preu]\", \"$_POST[cifProveidor]\", \"$_GET[id].jpg\");";
     echo $query;

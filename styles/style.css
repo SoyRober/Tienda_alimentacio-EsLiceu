@@ -1,15 +1,15 @@
-tr.list {
-    color:white;
-    background-color:#008f39;
-    border:5px solid #545353;
-}
-
 body {
     background-image: url("../img/fondo.jpg");
 }
 
-td {
-    padding: 5px;
+td.right {
+    text-align: right;
+}
+
+table.list, th.list, td.list {
+    border: 3px solid darkgreen;
+    border-collapse: collapse;
+    height: 50%;
 }
 
 table {
@@ -30,6 +30,7 @@ button.inserts {
     border-radius: 6px;
     border: 2px solid #00cf0a;
 }
+
 label {
     font-weight: 600;
 }
@@ -90,6 +91,7 @@ select.select {
     background-color: #b6d6ac;
     border-radius: 6px;
     border: 2px solid #00cf0a;
+    display: block;
 }
 
 button.llista {
@@ -146,28 +148,21 @@ footer p.insta {
 }
 
 button[type="submit" i] {
-    padding: 3px 2px;
-    text-align: left;
+    text-align: right;
 }
 
 h2 {
     text-align: center;
-    padding-right: 500px;
-}
-
-input[type="reset" i] {
-    padding: 3px 2px;
-    text-align: left;
 }
 
 input[type="number" i] {
     padding: 1px 2px;
-    text-align: left;
+    display: block;
 }
 
 input[type="text" i] {
     padding: 1px 2px;
-    text-align: left;
+    display: block;
 }
 
 .tdinsert td {
@@ -193,7 +188,7 @@ footer p a {
 }
 
 footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     float: left;
     margin-top: 100px;
@@ -202,34 +197,19 @@ footer {
     color: white;
 }
 
-nav {
-    display: block;
-    width: 100%;
-
-}
-
-header {
-    display: inline-block;
-    
-}
-
 thead th {
     background-color: #008f39;
     color: white;
 }
 
 #menu ul {
-    z-index: 2;
-    list-style:none;
-    margin:10;
-    padding:0;
+    list-style: none;
+    margin: 10;
+    padding: 0;
+    text-align: center;
+    background: #008f39;
 }
    
-#menu ul li {
-    background-color:#008f39;
-    z-index: 2;
-}
-
 #menu ul a {
     display:block;
     color:#fff;
@@ -245,10 +225,12 @@ thead th {
 
 #menu ul li {
     position:relative;
-    float:left;
     margin:0;
     padding:0;
     z-index: 2;
+    z-index: 2;
+    display: inline-block;
+    background: #008f39;
 }
 
 #menu ul li:hover {
@@ -269,7 +251,8 @@ thead th {
    
 #menu ul ul li {
     float:none;
-    width:150px
+    width:150px;
+    padding: 0;
 }
    
 #menu ul ul a {

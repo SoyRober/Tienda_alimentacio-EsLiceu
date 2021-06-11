@@ -45,15 +45,8 @@
             </tr>
 
             <tr>
-                <td>
-                    <label>
-                        Resetear
-                    </label>
+                <td class="right">
                     <input class="inserts" type="reset">
-                </td>
-            </tr>
-            <tr>
-                <td>
                     <button class="inserts" type="submit">
                         Enviar
                     </button>
