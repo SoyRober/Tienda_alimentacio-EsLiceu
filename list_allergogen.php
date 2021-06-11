@@ -6,12 +6,12 @@
             <h2> Llista de tots els al·lergògens </h2>
             <form action = "list_allergogen.php" method = "GET" >
             </form>
-            <table>
+            <table class="list">
                 <thead>
                     <tr>
-                        <th> idAllergogen </th>
-                        <th> Nom </th>
-                        <th> Opcions </th>
+                        <th class="list"> idAllergogen </th>
+                        <th class="list"> Nom </th>
+                        <th class="list"> Opcions </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -20,9 +20,9 @@
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                         echo    "<tr>
-                                    <td> $row[idAllergogen] </td>
-                                    <td> $row[Nom] </td>
-                                    <td> 
+                                    <td class=\"list\"> $row[idAllergogen] </td>
+                                    <td class=\"list\"> $row[Nom] </td>
+                                    <td class=\"list\"> 
                                     <button class=\"llista\" onclick=\"window.location.href='delete_api_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Elimina </button> |
                                     <button class=\"llista\" onclick=\"window.location.href='insert_allergogen.php?idAllergogen=$row[idAllergogen] '\"> Editar </button>
                                     </td>

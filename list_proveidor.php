@@ -18,16 +18,16 @@
                 <button class="filtrar" type = "submit"> Filtrar </button>
             </form>
             <a class="reinici_filtre" href=list_proveidor.php> Reiniciar filtre </a>
-            <table>
+            <table class="list">
                 <thead>
                     <tr>
-                        <th> Nom </th>
-                        <th> Adreca </th>
-                        <th> CP </th>
-                        <th> País </th>
-                        <th> cifProveidor </th>
-                        <th> Telèfon </th>
-                        <th> Opcions </th>
+                        <th class="list"> Nom </th>
+                        <th class="list"> Adreca </th>
+                        <th class="list"> CP </th>
+                        <th class="list"> País </th>
+                        <th class="list"> cifProveidor </th>
+                        <th class="list"> Telèfon </th>
+                        <th class="list"> Opcions </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,13 +40,13 @@
                         $result = mysqli_query ($bbdd, $query) or die(mysqli_error($bbdd));
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo    "<tr>
-                                        <td> $row[Nom] </td>
-                                        <td> $row[Adreca] </td>
-                                        <td> $row[CP] </td>
-                                        <td> $row[Pais] </td>
-                                        <td> $row[cifProveidor] </td>
-                                        <td> $row[Telefon] </td>
-                                        <td> 
+                                        <td class=\"list\"> $row[Nom] </td>
+                                        <td  class=\"list\"> $row[Adreca] </td>
+                                        <td  class=\"list\"> $row[CP] </td>
+                                        <td  class=\"list\"> $row[Pais] </td>
+                                        <td  class=\"list\"> $row[cifProveidor] </td>
+                                        <td  class=\"list\"> $row[Telefon] </td>
+                                        <td  class=\"list\"> 
                                         <button class=\"llista\" onclick=\"window.location.href='delete_api_proveidor.php?cifProveidor=$row[cifProveidor] '\" class=\"llista\"> Elimina </button> |
                                         <button class=\"llista\" onclick=\"window.location.href='insert_proveidor.php?cifProveidor=$row[cifProveidor] '\"> Editar </button>
                                         </td> 

@@ -4,8 +4,21 @@
         <body>
             <?php require "includes/header.php";?>
             <h2> Llista de clients </h2>
-            <form action = "list_clients.php" method = "GET" >
+            <form action = "list_client.php" method ="GET">
+            <select name="Client"> 
+            <option value=""> </option>
+            <?php
+                        $query = "SELECT Nom, dniClient FROM Client ORDER BY Nom;";
+                        $result = mysqli_query ($bbdd, $query);
+                            while ($row = mysqli_fetch_assoc ($result)) {
+                                echo "<option value = \"$row[dni]\"> $row[Nom] </option>";
+                            }
+                    ?>
+            </select>
+            <button type ="submit"> FILTRAR 
+                </button>
             </form>
+            <h1>  
             <table>
                 <thead>
                     <tr>
@@ -15,9 +28,10 @@
                         <th> CP </th>
                         <th> Telefon </th>
                         <th> Provincia </th>
-                        <th> Poblacio </th>
                         <th> Adreca </th>               
                         <th> idTargeta </th>
+                        <th> Email </th>
+                        <th> Imatge </th>
                         <th> Opcions </th>
                     </tr>
                 </thead>
@@ -27,9 +41,10 @@
                 if (isset($_GET['Targeta'])) {
                     $where = " WHERE tr.idTargeta = \"$_GET[Targeta]\" ";
                 }
-                    $query = "SELECT cl.* , tr.idTargeta AS NomTargeta FROM Client AS cl INNER JOIN Targeta AS tr 
-                    ON (pr.fkidTargeta  = tr.idTargeta) 
-                    $where ORDER BY idClient;";
+                $query = "SELECT cl.*, tr.idTargeta  AS idTargeta FROM Client
+                 AS cl INNER JOIN Targeta AS tr
+                        ON (cl.fkidTargeta = tr.idTargeta)
+                 $where ORDER BY Nom;";  
                     $result = mysqli_query ($bbdd, $query);
                     while ($row = mysqli_fetch_assoc($result))
                     echo    "<tr>
@@ -39,15 +54,19 @@
                     <td> $row[CP] </td>
                     <td> $row[Telefon] </td>
                     <td> $row[Provincia] </td>
-                    <td> $row[Poblacio] </td>
                     <td> $row[Adreca] </td>
                     <td> $row[fkidTargeta] </td>
-                    <a href=\"delete_api_client.php?dniClient=$row[dniClient]\"> Eliminar </a> |
-
+                    <td> $row[Email] </td>
+                    <td> <img src=\"img/clientes/$row[imagen]\" width=\"80\"> </td>
+                    <td>
+                    <button onclick=\"window.location.href='delete_api_client.php?dniClient=$row[dniClient] '\"> Elimina </button> |
+                    <button onclick=\"window.location.href='insert_client.php?dniClient=$row[dniClient] '\"> Editar </button> 
+                    </td>
                                     
                 </tr>"
-                    ?>
+                    ?> 
                 </tbody>        
             </table>
+            </h1>
         </body>
     </html> 

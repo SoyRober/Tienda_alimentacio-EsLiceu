@@ -20,18 +20,18 @@
         <br>
     </form>
     <a class="reinici_filtre" href=list_producte.php> Reiniciar filtre </a>
-    <table>
+    <table class="list">
         <thead>
             <tr>
-                <th> idProducte </th>
-                <th> Codi de barres </th>
-                <th> Nom </th>
-                <th> IVA </th>
-                <th> Descripció </th>
-                <th> Preu </th>
-                <th> cifProveidor </th>
-                <th> Imatge </th>
-                <th> Opcions </th>
+                <th class="list"> idProducte </th>
+                <th class="list"> Codi de barres </th>
+                <th class="list"> Nom </th>
+                <th class="list"> IVA </th>
+                <th class="list"> Descripció </th>
+                <th class="list"> Preu </th>
+                <th class="list"> cifProveidor </th>
+                <th class="list"> Imatge </th>
+                <th class="list"> Opcions </th>
             </tr>
         </thead>
         <tbody>
@@ -47,15 +47,15 @@
             $result = mysqli_query($bbdd, $query);
             while ($row = mysqli_fetch_assoc($result))
                 echo    "<tr> 
-                                        <td> $row[idProducte] 
-                                        <td> $row[Codi_de_barres] </td>
-                                        <td> $row[Nom] </td>
-                                        <td> $row[IVA] </td>
-                                        <td> $row[Descripcio] </td>
-                                        <td> $row[Preu] </td>
-                                        <td> $row[fkcifProveidor] </td>
-                                        <td> <img src=\"img/productes/$row[imagen] \" width=\"80\"> </td> 
-                                        <td> 
+                                        <td class=\"list\"> $row[idProducte] 
+                                        <td class=\"list\"> $row[Codi_de_barres] </td>
+                                        <td class=\"list\"> $row[Nom] </td>
+                                        <td class=\"list\"> $row[IVA] </td>
+                                        <td class=\"list\"> $row[Descripcio] </td>
+                                        <td class=\"list\"> $row[Preu] </td>
+                                        <td class=\"list\"> $row[fkcifProveidor] </td>
+                                        <td class=\"list\"> <img src=\"img/productes/$row[imagen] \" width=\"80\"> </td> 
+                                        <td class=\"list\"> 
                                         <button class=\"llista\" onclick=\"window.location.href='list_pro-al.php?idProducte=$row[idProducte] '\"> Consultar al·lergògen </button> |
                                         <button class=\"llista\" onclick=\"window.location.href='delete_api_producte.php?idProducte=$row[idProducte] '\"> Elimina </button> |
                                         <button class=\"llista\" onclick=\"window.location.href='insert_producte.php?idProducte=$row[idProducte] '\"> Editar </button>
