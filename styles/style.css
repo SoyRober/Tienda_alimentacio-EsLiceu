@@ -14,7 +14,7 @@ table.list, th.list, td.list {
 
 table {
     position: relative;
-    top:50px;
+    top: 50px;
     margin: 0 auto;
 }
 
@@ -47,7 +47,6 @@ input.img_pro {
     border: 2px solid #00cf0a;
 }
 
-
 input.inserts {
     text-decoration: none;
     color: black;
@@ -73,7 +72,7 @@ button.inserts {
 }
 
 table a {
-    color:#fff;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -106,7 +105,6 @@ button.llista {
     border: 2px solid #00cf0a;
 }
 
-
 button.filtrar {
     text-decoration: none;
     color: black;
@@ -121,11 +119,11 @@ button.filtrar {
 
 a.reinici_filtre {
     text-decoration: none;
-    color: black;   
+    color: black;
     padding: 10px;
     position: relative;
     left: 105px;
-    top:30px;
+    top: 30px;
     font-weight: 600;
     font-size: 14px;
     background-color: #b6d6ac;
@@ -139,7 +137,7 @@ body h1 {
     width: 100%;
     background-color: green;
     margin: auto;
-    text-align:center;
+    text-align: center;
     padding: 20px;
 }
 
@@ -153,6 +151,11 @@ button[type="submit" i] {
 
 h2 {
     text-align: center;
+}
+
+input[type="email" i] {
+    padding: 1px 2px;
+    display: block;
 }
 
 input[type="number" i] {
@@ -209,24 +212,24 @@ thead th {
     text-align: center;
     background: #008f39;
 }
-   
+
 #menu ul a {
-    display:block;
-    color:#fff;
-    text-decoration:none;
-    font-weight:400;
-    font-size:15px;
-    padding:10px;
-    font-family:"Arial";
-    text-transform:uppercase;
-    letter-spacing:1px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 15px;
+    padding: 10px;
+    font-family: "Arial";
+    text-transform: uppercase;
+    letter-spacing: 1px;
     z-index: 2;
 }
 
 #menu ul li {
-    position:relative;
-    margin:0;
-    padding:0;
+    position: relative;
+    margin: 0;
+    padding: 0;
     z-index: 2;
     z-index: 2;
     display: inline-block;
@@ -234,42 +237,42 @@ thead th {
 }
 
 #menu ul li:hover {
-    background:#4f9453;
+    background: #4f9453;
     z-index: 2;
 }
 
 #menu ul ul {
     z-index: 2;
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    background:#eee;
-    padding:0;
-    z-index: 2;
-}
-   
-#menu ul ul li {
-    float:none;
-    width:150px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #eee;
     padding: 0;
-}
-   
-#menu ul ul a {
-    line-height:120%;
-    padding:10px 15px;
     z-index: 2;
 }
 
-#menu ul li:hover > ul {
-    display:block;
+#menu ul ul li {
+    float: none;
+    width: 150px;
+    padding: 0;
+}
+
+#menu ul ul a {
+    line-height: 120%;
+    padding: 10px 15px;
+    z-index: 2;
+}
+
+#menu ul li:hover>ul {
+    display: block;
     z-index: 2;
 }
 
 html {
     font-family: arial;
 }
- 
+
 h1.img span {
     position: relative;
 }
@@ -290,4 +293,4 @@ h1.img span::before {
 img {
     margin-left: auto;
     margin-right: auto;
-} 
+}

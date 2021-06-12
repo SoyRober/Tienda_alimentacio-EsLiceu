@@ -88,14 +88,10 @@
             </tr>
             <tr>
                 <td class="right">
-                    <label >
+                    <label>
                         Resetear
                     </label>
                     <input class="inserts" type="reset">
-                </td>
-            </tr>
-            <tr>
-                <td class="right">
                     <button class="inserts" type="submit">
                         Enviar
                     </button>
