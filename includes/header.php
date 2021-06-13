@@ -37,8 +37,8 @@
             </li>
             <li> <a href="#"> Ventes </a>
                 <ul>
-                    <li> <a href="insert_targeta.php"> Insertar nou venta </a> </li>
-                    <li> <a href="list_targeta.php"> Llista de les ventes </a> </li>
+                    <li> <a href="insert_venta.php"> Insertar nova venta </a> </li>
+                    <li> <a href="list_venta.php"> Llista de les ventes </a> </li>
                 </ul>
             </li>
         </ul>

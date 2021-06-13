@@ -36,42 +36,34 @@
     <table>
         <tr>
             <td>
-                <div>
-                    <label>
-                        Nom
-                    </label>
-                    <input class="inserts" type="text" maxlength="255" required minlength="2" name="Nom" value="<?= $nom ?>">
-
-                </div>
-                <div>
-                    <label>
-                        Descompte
-                    </label>
-                    <input class="inserts" type="number" max="100" required min="4" name="Descompte" value="<?= $descompte ?>">
-                </div>
-                <div>
-                    <label>
-                        Punts
-                    </label>
-                    <input class="inserts" type="number" max="5000" required min="100" name="Punts" value="<?= $punts ?>">
-                </div>
+                <label>
+                    Nom
+                </label>
+                <input class="inserts" type="text" maxlength="255" required minlength="2" name="Nom" value="<?= $nom ?>">
+            </td>
+        </tr>
         <tr>
-            <td class="right">
-                <div>
-                    <label>
-                        Resetear
-                    </label>
-                    <input type="reset" class="inserts">
-                </div>
+            <td>
+                <label>
+                    Descompte
+                </label>
+                <input class="inserts" type="number" max="80" required min="0" name="Descompte" value="<?= $descompte ?>">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>
+                    Punts
+                </label>
+                <input class="inserts" type="number" max="5000" required min="0" name="Punts" value="<?= $punts ?>">
             </td>
         </tr>
         <tr>
             <td class="right">
-                <div>
-                    <button class="inserts" type="submit">
-                        Enviar
-                    </button>
-                </div>
+                <input type="reset" class="inserts">
+                <button class="inserts" type="submit">
+                    Enviar
+                </button>
             </td>
         </tr>
     </table>

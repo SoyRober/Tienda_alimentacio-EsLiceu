@@ -1,7 +1,7 @@
 <?php
 require "includes/mysql.php";
-$query = "INSERT INTO Venta (Nombre,fkdniClient,fkidTargeta) 
-    VALUES (\"$_POST[Nombre]\", \"$_POST[fkdniClient]\",\"$_POST[fkidTargeta]\");";
+$query = "INSERT INTO Venta (Quantitat,fkdniClient,fkidTargeta) 
+    VALUES (\"$_POST[Quantitat]\", \"$_POST[fkdniClient]\",\"$_POST[fkidTargeta]\");";
 echo $query;
 $result = mysqli_query($bbdd, $query);
 if (!$result) {

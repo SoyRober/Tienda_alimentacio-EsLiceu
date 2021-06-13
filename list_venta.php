@@ -6,22 +6,20 @@
     <?php require "includes/header.php"; ?>
 
     <h2> Llista de vendes</h2>
-    <h4> Ventes </h4>
-    <p> Parrafo precioso la verdad </p>
     <form action="list_venta.php" method="GET">
         <select class="select" name="Client">
-            <option value=""> </option>
+            <option value=""> Selecciona un client </option>
             <?php
 
-            $query = "SELECT Nom, dniClient FROM Client ORDER BY Nom";
+            $query = "SELECT dniClient FROM Client ORDER BY dniClient";
             $result = mysqli_query($bbdd, $query);
             while ($row = mysqli_fetch_assoc($result)) {
 
-                echo "<option value=\"$row[dniClient]\">$row[Nom]</option>";
+                echo "<option value=\"$row[dniClient]\">$row[dniClient]</option>";
             }
             ?>
         </select>
-        <button class="filtrar" type="submit"> FILTRAR
+        <button class="filtrar" type="submit"> Filtrar
         </button>
     </form>
     <a class="reinici_filtre" href=list_venta.php> Reiniciar filtre </a>
@@ -29,8 +27,9 @@
         <thead>
             <tr>
                 <th class="list"> idVenta </th>
-                <th class="list">Nombre </th>
-                <th class="list"> dniClient </th>
+                <th class="list"> Quantitat </th>
+                <th class="list"> DNI del client </th>
+                <th class="list"> Nom de la targeta </th>
                 <th class="list"> Opcions </th>
             </tr>
         </thead>
@@ -38,25 +37,27 @@
             <?php
             $where = "";
             if (isset($_GET['Client'])) {
-                $where = " WHERE cl.dniClient = \"$_GET[Client]\" ";
+                $where = " WHERE dniClient = \"$_GET[Client]\" ";
             }
 
-            $query = "SELECT *, cl.Nom, cl.dniClient FROM Venta AS vt
-                    INNER JOIN Client AS cl  ON (vt.fkdniClient = cl.dniClient)  
+            $query = "SELECT *, cl.dniClient, tr.idTargeta, tr.Nom AS nom_targeta FROM Venta AS vt
+                    INNER JOIN Client AS cl  ON (vt.fkdniClient = cl.dniClient)
+                    INNER JOIN Targeta AS tr  ON (vt.fkidTargeta = tr.idTargeta) 
                     $where ORDER BY idVenta;";
 
             $result = mysqli_query($bbdd, $query) or die(mysqli_error($bbdd));
             while ($row = mysqli_fetch_assoc($result))
                 echo
                 "<tr>            
-                       <td class=\"list\"> $row[idVenta] </td>
-                       <td class=\"list\"> $row[Nombre] </td>
-                       <td class=\"list\"> $row[fkdniClient] </td>
-                       <td class=\"list\">
+                        <td class=\"list\"> $row[idVenta] </td>
+                        <td class=\"list\"> $row[Quantitat] </td>
+                        <td class=\"list\"> $row[fkdniClient] </td>
+                        <td class=\"list\"> $row[nom_targeta]</td>
+                        <td class=\"list\">
                         <button class=\"llista\" onclick=\"window.location.href='delete_api_venta.php?idVenta=$row[idVenta] '\"> Elimina </button> |
                         <button class=\"llista\" onclick=\"window.location.href='insert_venta.php?idVenta=$row[idVenta] '\"> Editar </button> 
                         </td>
-                        </tr>"
+                    </tr>";
             ?>
         </tbody>
     </table>

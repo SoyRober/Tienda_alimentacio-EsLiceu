@@ -1,7 +1,7 @@
 <?php
 require "includes/mysql.php";
-$query = "INSERT INTO Pro_Al (fkidProducte,fkdniClient) 
-    VALUES (\"$_POST[fkidProducte]\", \"$_POST[fkdniClient]\");";
+$query = "INSERT INTO Pro_Al (fkidProducte,fkidAllergogen) 
+    VALUES (\"$_POST[fkidProducte]\", \"$_POST[fkidAllergogen]\");";
 echo $query;
 $result = mysqli_query($bbdd, $query);
 if (!$result) {

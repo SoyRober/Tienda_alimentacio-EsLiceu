@@ -47,7 +47,7 @@
                     <label>
                         DNI del client
                     </label>
-                    <input class="inserts" type="text" max="40" required name="dniClient" value="<?= $dniClient ?>">
+                    <input class="inserts" type="text" maxlength="9" minlenght="9" required name="dniClient" value="<?= $dniClient ?>">
                 </td>
             </tr>
             <tr>
@@ -102,24 +102,6 @@
             </tr>
             <tr>
                 <td>
-                    <label>
-                        Targeta
-                    </label>
-                    <select class="select" name="fkidTargeta" value="<?= $fkidtargeta ?>" required>
-                        <option value=""> </option>
-                        <?php
-                        $query = "SELECT idTargeta, Nom FROM Targeta;";
-                        $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va correctament");
-                        while ($Targeta = mysqli_fetch_assoc($result)) {
-                            $selected = ($Targeta['idTargeta'] == $fkidTargeta) ? 'selected' : '';
-                            echo "<option $selected value = \"$Targeta[idTargeta]\">$Targeta[Nom]</option>";
-                        }
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
 
                     <label>
                         Posar correu electrònic
@@ -127,6 +109,24 @@
                     <input class="inserts" type="email" name="Email" value="<?= $email ?>">
                 </td>
             </tr>
+            <tr>
+            <td>
+                <label>
+                    Targeta
+                </label>
+                <select class="select" name="idTargeta" value="<?= $fkidtageta ?>" required>
+                    <option value=""> Selecciona una targeta </option>
+                    <?php
+                    $query = "SELECT idTargeta, Nom FROM Targeta;";
+                    $result = mysqli_query($bbdd, $query) or die("Alguna cosa no va correctament");
+                    while ($Targeta = mysqli_fetch_assoc($result)) {
+                        $selected = ($Targeta['idTargeta'] == $fkidTargeta) ? 'selected' : '';
+                        echo "<option $selected value = \"$Targeta[idTargeta]\">$Targeta[Nom]</option>";
+                    }
+                    ?>
+                </select>
+            </td>
+        </tr>
             <tr>
                 <td class="right">
                     <input type="reset" class="inserts">
