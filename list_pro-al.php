@@ -65,7 +65,7 @@ if (isset($_GET['Producte']) && (intval($_GET['Producte']) > 0)) {
             }
             if ($idProducte) {
                 $where .= ($where == '') ?  " WHERE " : " AND ";
-                $where .= " pa.fkidProducte = \"$_GET[Producte]\"";
+                $where .= " pa.fkidProducte = \"$_GET[Producte]\" ";
             }
             $query = "SELECT pa.*, pr.Nom, al.Nom AS Nom_allergogen 
             FROM Pro_Al AS pa 

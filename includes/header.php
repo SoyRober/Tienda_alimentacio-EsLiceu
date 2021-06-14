@@ -7,8 +7,10 @@
                 <ul>
                     <li> <a href="insert_producte.php"> Insertar nou producte </a> </li>
                     <li> <a href="list_producte.php"> Llista dels productes </a> </li>
-                    <li> <a href="insert_pro-al.php"> Insertar nou porducte amb al·lèrgia</a> </li>
+                    <li> <a href="insert_pro-al.php"> Insertar producte amb al·lèrgia</a> </li>
                     <li> <a href="list_pro-al.php"> Llista dels productes amb al·lèrgies </a> </li>
+                    <li> <a href="insert_producte-venta.php"> Insertar producte amb al·lèrgia</a> </li>
+                    <li> <a href="list_producte-venta.php"> Llista dels productes amb al·lèrgies </a> </li>
                 </ul>
             </li>
             <li> <a href="#"> Proveidors </a>
