@@ -19,7 +19,7 @@ if (isset($_GET['Producte']) && (intval($_GET['Producte']) > 0)) {
     <h2> Llista de tots els productes amb al·lèrgies </h2>
     <form action="list_pro-al.php" method="GET">
         <select class="select" name="Producte">
-            <option value="">Selecciona un producte</option>
+            <option value="">Selecciona un prod</option>
             <?php
 
             $query = "SELECT Nom, idProducte FROM Producte ORDER BY Nom;";
